@@ -18,7 +18,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employees available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -37,7 +37,7 @@ class WrkEmployee
                 $emparray = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee administration available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -56,7 +56,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee formation available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -75,7 +75,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee professionnal experience available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -94,7 +94,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee consulting experience available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -113,7 +113,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee audit experience available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -137,7 +137,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee audit observation available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -153,10 +153,15 @@ class WrkEmployee
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+                if($row["validate"] == 0){
+                    $row["validate"] = false;
+                }else{
+                    $row["validate"] = true;
+                }
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee objective available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -175,7 +180,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No user available";
+            echo "No employee mandatesheet available";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -188,7 +193,10 @@ class WrkEmployee
         if($this->connexion->connect_error){
             die("Connection failed: " . $this->connexion->connect_error);
         }
-        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv) VALUES (NULL, '" . $employee["lastName"] . "', '" . $employee["firstName"] . "', '" . $employee["birthDate"] . "', '" . $employee["address"] . "', '" . $employee["postCode"] . "', '" . $employee["location"] . "', '" . $employee["avs"] . "', '" . $employee["phone"] . "', '" . $employee["email"] . "', '" . $employee["picture"] . "', '" . $employee["currentTitle"] . "', '" . $employee["comingToOfficeDate"] . "', '" . $employee["currentHourlyWage"] . "', '" . $employee["cv"] . "')";
+        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv) 
+            VALUES (NULL, '" . $employee["lastName"] . "', '" . $employee["firstName"] . "', '" . $employee["birthDate"] . "', '" . $employee["address"] . "', '" . $employee["postCode"] . "', '"
+            . $employee["location"] . "', '" . $employee["avs"] . "', '" . $employee["phone"] . "', '" . $employee["email"] . "', '" . $employee["picture"] . "', '" . $employee["currentTitle"]
+            . "', '" . $employee["comingToOfficeDate"] . "', '" . $employee["currentHourlyWage"] . "', '" . $employee["cv"] . "')";
         if($this->connexion->query($sql)){
             $message = "OK";
         }else{
