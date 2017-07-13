@@ -27,6 +27,8 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_formation_types_list();
 } else if (isset($_GET["nmsstandards"])) {
     echo $ctrl->get_nmsstandard_list();
+} else if (isset($_GET["employee_internalqualifications"])) {
+    echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if (isset($_POST["add_employee"])) {
     //$ctrl->add_employee($_POST["add_employee"]);
     echo var_dump($_POST);
@@ -104,6 +106,11 @@ class Ctrl
     public function get_nmsstandard_list()
     {
         return $this->wrk->get_nmsstandard_list();
+    }
+
+    public function get_internal_qualification_list($employee)
+    {
+        return $this->wrk->get_internal_qualification_list($employee);
     }
 }
 

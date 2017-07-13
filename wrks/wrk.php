@@ -3,6 +3,7 @@ include("../beans/db_connection.php");
 include("wrk_employee.php");
 include("wrk_formation_type.php");
 include("wrk_nmsstandard.php");
+include("wrk_internal_qualification.php");
 
 class Wrk
 {
@@ -10,6 +11,7 @@ class Wrk
     private $wrk_employee;
     private $wrk_formationtype;
     private $wrk_nmsstandard;
+    private $wrk_internalqualification;
 
     public function __construct()
     {
@@ -20,6 +22,7 @@ class Wrk
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
+        $this->wrk_internalqualification = new WrkInternalQualification();
     }
 
     public function get_employees_list()
@@ -85,6 +88,11 @@ class Wrk
     public function get_nmsstandard_list()
     {
         return $this->wrk_nmsstandard->get_nmsstandard_list($this->db_connection);
+    }
+
+    public function get_internal_qualification_list($employee)
+    {
+        return $this->wrk_internalqualification->get_internal_qualification_list($this->db_connection, $employee);
     }
 }
 
