@@ -1,5 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Methods: GET, POST, PUT');
 include("../wrks/wrk.php");
 $ctrl = new Ctrl();
 
@@ -29,10 +31,11 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_nmsstandard_list();
 } else if (isset($_GET["employee_internalqualifications"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
-} else if (isset($_POST["add_employee"])) {
-    //$ctrl->add_employee($_POST["add_employee"]);
-    echo var_dump($_POST);
 }
+
+/*else if (isset($_POST["add_employee"])) {
+    echo $ctrl->add_employee($_POST["add_employee"]);
+}*/
 
 class Ctrl
 {
