@@ -77,6 +77,7 @@ class Wrk
 
     public function add_employee($employee)
     {
+        $this->wrk_internalqualification->add_default_internal_qualification($this->db_connection, $employee);
         return $this->wrk_employee->add_employee($this->db_connection, $employee);
     }
 

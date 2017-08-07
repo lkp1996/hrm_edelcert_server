@@ -15,9 +15,9 @@ class WrkInternalQualification
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                if($row["yesno"] == 0){
+                if ($row["yesno"] == 0) {
                     $row["yesno"] = false;
-                }else{
+                } else {
                     $row["yesno"] = true;
                 }
                 $emparray[] = $row;
@@ -27,6 +27,24 @@ class WrkInternalQualification
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
+    }
+
+    public function add_default_internal_qualification(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if (!$this->connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "INSERT INTO internalqualification_employee (fk_internalQualification, fk_employee, yesno, result, validationDate, attachement) VALUES ('1', '" . $pk_employee . "', '0', '', NULL, NULL), ('2', '" . $pk_employee . "', '0', '', NULL, NULL), ('3', '" . $pk_employee . "', '0', '', NULL, NULL), ('4', '" . $pk_employee . "', '0', '', NULL, NULL), ('5', '" . $pk_employee . "', '0', '', NULL, NULL), ('6', '" . $pk_employee . "', '0', '', NULL, NULL), ('7', '" . $pk_employee . "', '0', '', NULL, NULL), ('8', '" . $pk_employee . "', '0', '', NULL, NULL), ('9', '" . $pk_employee . "', '0', '', NULL, NULL)";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
     }
 }
 
