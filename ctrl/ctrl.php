@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Process-Data");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 include("../wrks/wrk.php");
 $ctrl = new Ctrl();
 
@@ -32,7 +33,25 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if ($json = json_decode(file_get_contents('php://input'))) {
     echo $ctrl->add_employee($json);
+} else if (isset($_FILES["picture"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/picture/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["picture"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['picture']['tmp_name']));
+} else if (isset($_FILES["cv"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/cv/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["cv"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['cv']['tmp_name']));
+} else if (isset($_FILES["criminalRecord"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/criminalrecord/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["criminalRecord"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['criminalRecord']['tmp_name']));
+} else if (isset($_GET["deleteId"])) {
+    echo $ctrl->delete_employee($_GET["deleteId"]);
 }
+
 
 class Ctrl
 {
@@ -111,6 +130,11 @@ class Ctrl
     public function get_internal_qualification_list($employee)
     {
         return $this->wrk->get_internal_qualification_list($employee);
+    }
+
+    public function delete_employee($pk_employee)
+    {
+        return $this->wrk->delete_employee($pk_employee);
     }
 }
 

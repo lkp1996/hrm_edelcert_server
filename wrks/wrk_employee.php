@@ -197,7 +197,6 @@ class WrkEmployee
 
     public function add_employee(DBConnection $db_connection, $employee)
     {
-        $message = "";
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
         mysqli_set_charset($this->connection, "utf8");
         if ($this->connection->connect_error) {
@@ -209,6 +208,26 @@ class WrkEmployee
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
             . "', '" . $employee->comingToOfficeDate . "', '" . $employee->currentHourlyWage . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
         if ($this->connection->query($sql)) {
+            $last_id = $this->connection->insert_id;
+        } else {
+            $last_id = null;
+        }
+
+        $this->connection->close();
+        $this->create_dirs($last_id);
+        return $last_id;
+    }
+
+    public function delete_employee(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM employee WHERE employee.pk_employee = $pk_employee";
+        if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
             $message = "KO";
@@ -218,23 +237,16 @@ class WrkEmployee
         return $message;
     }
 
-    public function get_pk_employee($db_connection, $employee){
-        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
-        mysqli_set_charset($this->connection, "utf8");
-        if (!$this->connection) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        $sql = "SELECT pk_employee FROM employee WHERE lastName = '" . $employee->lastName . "' and firstName, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord";
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $emparray = $row;
-            }
-        } else {
-            echo "No employee administration available";
-        }
-        mysqli_close($this->connection);
-        return json_encode($emparray);
+    public function create_dirs($pk_employee)
+    {
+        mkdir("../attachements/auditobservation/$pk_employee");
+        mkdir("../attachements/criminalrecord/$pk_employee");
+        mkdir("../attachements/cv/$pk_employee");
+        mkdir("../attachements/formation/$pk_employee");
+        mkdir("../attachements/internalqualification/$pk_employee");
+        mkdir("../attachements/mandatesheet/$pk_employee");
+        mkdir("../attachements/picture/$pk_employee");
+        mkdir("../attachements/professionnalexperience/$pk_employee");
     }
 }
 

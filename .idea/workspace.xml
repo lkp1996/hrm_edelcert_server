@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988f5d07-0611-4861-9044-f9b9ae71f7a2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ctrl/test_post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wrks/test.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctrl/ctrl.php" afterPath="$PROJECT_DIR$/ctrl/ctrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ctrl/test.php" afterPath="$PROJECT_DIR$/ctrl/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrks/wrk.php" afterPath="$PROJECT_DIR$/wrks/wrk.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrks/wrk_employee.php" afterPath="$PROJECT_DIR$/wrks/wrk_employee.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" afterPath="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,18 +36,28 @@
       <file leaf-file-name="ctrl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+            <state relative-caret-position="57">
+              <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ctrl/test.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctrl/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -57,8 +66,8 @@
       <file leaf-file-name="wrk_internal_qualification.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state relative-caret-position="399">
+              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <marker date="1501509679000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
                 <marker date="1501509679000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
@@ -72,39 +81,36 @@
       <file leaf-file-name="wrk_employee.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="210" column="25" lean-forward="false" selection-start-line="210" selection-start-column="25" selection-end-line="210" selection-end-column="25" />
+            <state relative-caret-position="424">
+              <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
               <folding>
-                <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-                <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-                <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-                <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-                <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-                <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-                <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-                <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-                <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-                <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-                <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-                <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-                <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-                <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-                <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
+                <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+                <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+                <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+                <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+                <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+                <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+                <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+                <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+                <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+                <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+                <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -137,8 +143,8 @@
       <file leaf-file-name="wrk.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1520">
-              <caret line="80" column="41" lean-forward="false" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+            <state relative-caret-position="679">
+              <caret line="101" column="39" lean-forward="false" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -160,6 +166,7 @@
     <findStrings>
       <find>bd</find>
       <find>connexion</find>
+      <find>last_id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,11 +182,12 @@
         <option value="$PROJECT_DIR$/wrks/wrk_nmsstandard.php" />
         <option value="$PROJECT_DIR$/ctrl/test_post.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" />
+        <option value="$PROJECT_DIR$/attachements/todo_hrm_edelcert.txt" />
+        <option value="$PROJECT_DIR$/ctrl/test.php" />
         <option value="$PROJECT_DIR$/wrks/wrk.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_employee.php" />
         <option value="$PROJECT_DIR$/ctrl/ctrl.php" />
-        <option value="$PROJECT_DIR$/attachements/todo_hrm_edelcert.txt" />
-        <option value="$PROJECT_DIR$/ctrl/test.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -191,10 +199,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1857" />
-    <option name="y" value="36" />
-    <option name="width" value="1920" />
-    <option name="height" value="1058" />
+    <option name="y" value="22" />
+    <option name="width" value="960" />
+    <option name="height" value="1007" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -211,6 +218,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,48 +231,6 @@
               <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auditobservation" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="criminalrecord" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="cv" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="formation" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="internalqualification" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="mandatesheet" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrm_edelcert_server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="attachements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="professionnalexperience" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
@@ -284,8 +251,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,7 +259,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/attachements" />
+      <recent name="$PROJECT_DIR$/attachements/picture/45" />
+      <recent name="$PROJECT_DIR$/attachements/picture" />
+      <recent name="$PROJECT_DIR$/attachements/criminalrecord/1" />
+      <recent name="$PROJECT_DIR$/attachements/cv/2" />
+      <recent name="$PROJECT_DIR$/attachements/cv/1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -399,12 +368,13 @@
       <workItem from="1500465223231" duration="1372000" />
       <workItem from="1501489879443" duration="5400000" />
       <workItem from="1501853125825" duration="18000" />
-      <workItem from="1501853163645" duration="5712000" />
+      <workItem from="1501853163645" duration="6105000" />
+      <workItem from="1503054880560" duration="23083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38468000" />
+    <option name="totallyTimeSpent" value="61944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,9 +386,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="22" width="1920" height="1058" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1007" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1109375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -448,15 +418,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctrl/test_post.php" />
     <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -475,36 +436,33 @@
         <state relative-caret-position="3971">
           <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
           <folding>
-            <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-            <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-            <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-            <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-            <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-            <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-            <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-            <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-            <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+            <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+            <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+            <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+            <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+            <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -572,36 +530,33 @@
         <state relative-caret-position="3971">
           <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
           <folding>
-            <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-            <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-            <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-            <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-            <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-            <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-            <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-            <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-            <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+            <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+            <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+            <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+            <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+            <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -668,36 +623,33 @@
         <state relative-caret-position="646">
           <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
           <folding>
-            <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-            <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-            <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-            <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-            <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-            <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-            <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-            <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-            <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+            <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+            <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+            <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+            <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+            <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -756,36 +708,33 @@
         <state relative-caret-position="3040">
           <caret line="160" column="28" lean-forward="false" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
           <folding>
-            <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-            <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-            <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-            <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-            <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-            <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-            <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-            <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-            <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+            <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+            <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+            <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+            <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+            <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -839,36 +788,33 @@
         <state relative-caret-position="19">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-            <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-            <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-            <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-            <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-            <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-            <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-            <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-            <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+            <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+            <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+            <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+            <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+            <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -942,6 +888,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/attachements/email.csv" />
+    <entry file="file://$PROJECT_DIR$/attachements/FullSizeRender.jpg" />
+    <entry file="file://$PROJECT_DIR$/attachements/todo_hrm_edelcert.txt" />
     <entry file="file://$PROJECT_DIR$/wrks/wrk_formation_type.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -952,18 +901,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="80" column="41" lean-forward="false" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="399">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding>
             <marker date="1501509679000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
             <marker date="1501509679000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
@@ -973,78 +914,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
+    <entry file="file://$PROJECT_DIR$/ctrl/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="210" column="25" lean-forward="false" selection-start-line="210" selection-start-column="25" selection-end-line="210" selection-end-column="25" />
-          <folding>
-            <marker date="1501510157000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
-            <marker date="1501510157000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
-            <marker date="1501510157000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
-            <marker date="1501510157000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
-            <marker date="1501510157000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
-            <marker date="1501510157000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
-            <marker date="1501510157000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
-            <marker date="1501510157000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
-            <marker date="1501510157000" expanded="true" signature="9001:9225" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9256" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9288" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9320" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9350" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9381" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9424" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9450" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9478" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9506" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9536" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9583" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9624" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9664" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9689" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="9001:9724" ph="INSERT INTO employee... " />
-            <marker date="1501510157000" expanded="true" signature="10339:10389" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10390" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10422" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10573" ph="SELECT pk_em... employee" />
-            <marker date="1501510157000" expanded="true" signature="10339:10574" ph="SELECT pk_em... employee" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/attachements/email.csv">
+    <entry file="file://$PROJECT_DIR$/attachements/picture/51/allan-300x300.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="679">
+          <caret line="101" column="39" lean-forward="false" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+          <folding>
+            <marker date="1503497065000" expanded="true" signature="475:556" ph="SELECT pk_em... employee" />
+            <marker date="1503497065000" expanded="true" signature="1369:1570" ph="SELECT lastN... employee" />
+            <marker date="1503497065000" expanded="true" signature="2405:2449" ph="SELECT * FRO... formation" />
+            <marker date="1503497065000" expanded="true" signature="3295:3353" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1503497065000" expanded="true" signature="4211:4266" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1503497065000" expanded="true" signature="5116:5166" ph="SELECT * FRO... auditexperience" />
+            <marker date="1503497065000" expanded="true" signature="6135:6186" ph="SELECT * FRO... auditobservation" />
+            <marker date="1503497065000" expanded="true" signature="7026:7070" ph="SELECT * FRO... objective" />
+            <marker date="1503497065000" expanded="true" signature="8084:8131" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1503497065000" expanded="true" signature="8978:9202" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9233" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9265" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9297" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9327" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9358" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9401" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9427" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9455" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9483" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9513" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9560" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9601" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9641" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9666" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="8978:9701" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10474" ph="INSERT INTO employee... " />
+            <marker date="1503497065000" expanded="true" signature="10424:10475" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        <state relative-caret-position="57">
+          <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/attachements/FullSizeRender.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/attachements/todo_hrm_edelcert.txt">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctrl/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
           <folding />
         </state>
       </provider>

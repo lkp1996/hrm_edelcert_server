@@ -77,8 +77,9 @@ class Wrk
 
     public function add_employee($employee)
     {
-        $this->wrk_internalqualification->add_default_internal_qualification($this->db_connection, $employee);
-        return $this->wrk_employee->add_employee($this->db_connection, $employee);
+        $pk_employee = $this->wrk_employee->add_employee($this->db_connection, $employee);
+        $this->wrk_internalqualification->add_default_internal_qualification($this->db_connection, $pk_employee);
+        return $pk_employee;
     }
 
     public function get_formation_types_list()
@@ -94,6 +95,11 @@ class Wrk
     public function get_internal_qualification_list($employee)
     {
         return $this->wrk_internalqualification->get_internal_qualification_list($this->db_connection, $employee);
+    }
+
+    public function delete_employee($pk_employee)
+    {
+        return $this->wrk_employee->delete_employee($this->db_connection, $pk_employee);
     }
 }
 
