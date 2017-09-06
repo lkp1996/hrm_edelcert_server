@@ -32,7 +32,13 @@ if (isset($_GET["employees_list"])) {
 } else if (isset($_GET["employee_internalqualifications"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if ($json = json_decode(file_get_contents('php://input'))) {
-    echo $ctrl->add_employee($json);
+    if ($json->pk_employee && $json->lastName) {
+        echo $ctrl->update_employee_admin($json);
+    } else if($json[0]->pk_formation || $json[0]->formativeOrganization) {
+        echo $ctrl->update_employee_formations($json);
+    } else {
+        echo $ctrl->add_employee($json);
+    }
 } else if (isset($_FILES["picture"])) {
     $pk_employee = $_POST['id'];
     $target_dir = "../attachements/picture/$pk_employee/";
@@ -43,11 +49,13 @@ if (isset($_GET["employees_list"])) {
     $target_dir = "../attachements/cv/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["cv"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['cv']['tmp_name']));
+    echo "cv";
 } else if (isset($_FILES["criminalRecord"])) {
     $pk_employee = $_POST['id'];
     $target_dir = "../attachements/criminalrecord/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["criminalRecord"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['criminalRecord']['tmp_name']));
+    echo "criminalRecord";
 } else if (isset($_GET["deleteId"])) {
     echo $ctrl->delete_employee($_GET["deleteId"]);
 }
@@ -135,6 +143,16 @@ class Ctrl
     public function delete_employee($pk_employee)
     {
         return $this->wrk->delete_employee($pk_employee);
+    }
+
+    public function update_employee_admin($employee)
+    {
+        return $this->wrk->update_employee_admin($employee);
+    }
+
+    public function update_employee_formations($employee_formations)
+    {
+        return $this->wrk->update_employee_formations($employee_formations);
     }
 }
 

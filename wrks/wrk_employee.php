@@ -31,7 +31,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT lastName, firstName, birthDate, address,postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord FROM employee WHERE pk_employee = " . $pk_employee;
+        $sql = "SELECT pk_employee, lastName, firstName, birthDate, address,postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord FROM employee WHERE pk_employee = " . $pk_employee;
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -122,12 +122,6 @@ class WrkEmployee
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
-    }
-
-    //TODO
-    public function get_employee_internalqualification(DBConnection $db_connection, $pk_employee)
-    {
-
     }
 
     public function get_employee_auditobservation(DBConnection $db_connection, $pk_employee)
@@ -231,6 +225,128 @@ class WrkEmployee
             $message = "OK";
         } else {
             $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_admin(DBConnection $db_connection, $employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "UPDATE employee SET lastName = '$employee->lastName', firstName = '$employee->firstName', birthDate = '$employee->birthDate', 
+                  address = '$employee->address', postCode = '$employee->postCode', location = '$employee->location', avs = '$employee->avs', 
+                  phone = '$employee->phone', email = '$employee->email', currentTitle = '$employee->currentTitle', comingToOfficeDate = '$employee->comingToOfficeDate', 
+                  currentHourlyWage = '$employee->currentHourlyWage', cv = '$employee->cv', criminalRecord = '$employee->criminalRecord' WHERE employee.pk_employee = $employee->pk_employee";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_formations(DBConnection $db_connection, $employee_formations)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+                die("Connection failed: " . $this->connection->connect_error);
+            }
+        /*$sql = "SELECT * FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldFormations[] = $row;
+            }
+            foreach ($oldFormations as $oldFormation) {
+                $stillExist = false;
+                foreach ($employee_formations as $updatedFormation) {
+                    $stillExist = $oldFormation->pk_formation == $updatedFormation->pk_formation;
+                    if ($stillExist) {
+                        $sql = "UPDATE formation SET formativeOrganization = '$updatedFormation->formativeOrganization', 
+                          fk_formationType = '$updatedFormation->fk_formationType', EAScope = '$updatedFormation->EAScope', 
+                          fromDate = '$updatedFormation->fromDate', toDate = '$updatedFormation->toDate', 
+                          attachement = '$updatedFormation->attachement' WHERE formation.pk_formation = $updatedFormation->pk_formation";
+                        if ($this->connection->query($sql)) {
+                            $message += "Formation with pk $oldFormation->pk_formation updated \n";
+                        }else{
+                            $message += "Error while updating formation with pk $oldFormation->pk_formation \n";
+                        }
+                    }
+                }
+                if (!$stillExist) {
+                    $sql = "DELETE FROM formation WHERE formation.pk_formation = $oldFormation->pk_formation";
+                    if ($this->connection->query($sql)) {
+                        $message += "Formation with pk $oldFormation->pk_formation deleted \n";
+                    }else{
+                        $message += "Error while deleting formation with pk $oldFormation->pk_formation \n";
+                    }
+                }
+            }
+            foreach ($employee_formations as $updatedFormation) {
+                $alreadyExist = false;
+                foreach ($oldFormations as $oldFormation) {
+                    $alreadyExist = $oldFormation->pk_formation == $updatedFormation->pk_formation;
+                }
+                if(!$alreadyExist){
+                    $sql = "INSERT INTO formation (pk_formation, formativeOrganization, fk_formationType, EAScope, fromDate, toDate, attachement, fk_employee) 
+                      VALUES (NULL, '$updatedFormation->formativeOrganization', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
+                      '$updatedFormation->fromDate', '$updatedFormation->toDate', '$updatedFormation->attachement', '$updatedFormation->fk_employee')";
+                    if ($this->connection->query($sql)) {
+                        $message += "New formation « $updatedFormation->formativeOrganization » added \n";
+                    }else{
+                        $message += "Error while adding new formation « $updatedFormation->formativeOrganization » \n";
+                    }
+                }
+            }
+        } else {
+            $sql = "DELETE FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
+            if ($this->connection->query($sql)) {
+                $message += "Formations deleted \n";
+            }else{
+                $message += "Error while deleting formations \n";
+            }
+        }*/
+
+
+        $sql = "SELECT * FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldFormations[] = $row;
+            }
+        }
+
+        foreach ($employee_formations as $updatedFormation) {
+            if($updatedFormation->pk_formation == null){
+                $sql = "INSERT INTO formation (pk_formation, formativeOrganization, fk_formationType, EAScope, fromDate, toDate, attachement, fk_employee) 
+                      VALUES (NULL, '$updatedFormation->formativeOrganization', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
+                      '$updatedFormation->fromDate', '$updatedFormation->toDate', '$updatedFormation->attachement', '$updatedFormation->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message += "New formation « $updatedFormation->formativeOrganization » added \n";
+                }else{
+                    $message += "Error while adding new formation « $updatedFormation->formativeOrganization » \n";
+                }
+            }else{
+                $sql = "UPDATE formation SET formativeOrganization = '$updatedFormation->formativeOrganization', 
+                          fk_formationType = '$updatedFormation->fk_formationType', EAScope = '$updatedFormation->EAScope', 
+                          fromDate = '$updatedFormation->fromDate', toDate = '$updatedFormation->toDate', 
+                          attachement = '$updatedFormation->attachement' WHERE formation.pk_formation = $updatedFormation->pk_formation";
+                if ($this->connection->query($sql)) {
+                    $message += "Formation with pk $updatedFormation->pk_formation updated \n";
+                }else{
+                    $message += "Error while updating formation with pk $updatedFormation->pk_formation \n";
+                }
+            }
         }
 
         $this->connection->close();

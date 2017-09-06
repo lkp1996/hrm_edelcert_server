@@ -101,6 +101,16 @@ class Wrk
     {
         return $this->wrk_employee->delete_employee($this->db_connection, $pk_employee);
     }
+
+    public function update_employee_admin($employee)
+    {
+        return $this->wrk_employee->update_employee_admin($this->db_connection, $employee);
+    }
+
+    public function update_employee_formations($employee_formations)
+    {
+        return $this->wrk_employee->update_employee_formations($this->db_connection, $employee_formations);
+    }
 }
 
 
