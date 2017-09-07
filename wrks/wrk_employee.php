@@ -259,8 +259,8 @@ class WrkEmployee
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
         mysqli_set_charset($this->connection, "utf8");
         if ($this->connection->connect_error) {
-                die("Connection failed: " . $this->connection->connect_error);
-            }
+            die("Connection failed: " . $this->connection->connect_error);
+        }
         /*$sql = "SELECT * FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
@@ -327,24 +327,42 @@ class WrkEmployee
         }
 
         foreach ($employee_formations as $updatedFormation) {
-            if($updatedFormation->pk_formation == null){
+            if ($updatedFormation->pk_formation == null) {
                 $sql = "INSERT INTO formation (pk_formation, formativeOrganization, fk_formationType, EAScope, fromDate, toDate, attachement, fk_employee) 
                       VALUES (NULL, '$updatedFormation->formativeOrganization', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
                       '$updatedFormation->fromDate', '$updatedFormation->toDate', '$updatedFormation->attachement', '$updatedFormation->fk_employee')";
                 if ($this->connection->query($sql)) {
-                    $message += "New formation « $updatedFormation->formativeOrganization » added \n";
-                }else{
-                    $message += "Error while adding new formation « $updatedFormation->formativeOrganization » \n";
+                    $message .= "New formation « $updatedFormation->formativeOrganization » added \n";
+                } else {
+                    $message .= "Error while adding new formation « $updatedFormation->formativeOrganization » \n";
                 }
-            }else{
+            } else {
                 $sql = "UPDATE formation SET formativeOrganization = '$updatedFormation->formativeOrganization', 
                           fk_formationType = '$updatedFormation->fk_formationType', EAScope = '$updatedFormation->EAScope', 
                           fromDate = '$updatedFormation->fromDate', toDate = '$updatedFormation->toDate', 
                           attachement = '$updatedFormation->attachement' WHERE formation.pk_formation = $updatedFormation->pk_formation";
                 if ($this->connection->query($sql)) {
-                    $message += "Formation with pk $updatedFormation->pk_formation updated \n";
-                }else{
-                    $message += "Error while updating formation with pk $updatedFormation->pk_formation \n";
+                    $message .= "Formation with pk $updatedFormation->pk_formation updated \n";
+                } else {
+                    $message .= "Error while updating formation with pk $updatedFormation->pk_formation \n";
+                }
+            }
+        }
+        foreach ($oldFormations as $oldFormation) {
+            $stillExist = false;
+            foreach ($employee_formations as $updatedFormation) {
+                $message .= "updated pk" . $updatedFormation->pk_formation . "\n" . "old pk " . $oldFormation["pk_formation"] . "\n";
+                if ($updatedFormation->pk_formation == $oldFormation["pk_formation"]) {
+
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM formation WHERE formation.pk_formation = ". $oldFormation["pk_formation"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Formation with pk " . $oldFormation["pk_formation"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting formation with pk " . $oldFormation["pk_formation"] . "\n";
                 }
             }
         }
