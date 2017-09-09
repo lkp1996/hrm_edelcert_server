@@ -32,12 +32,20 @@ if (isset($_GET["employees_list"])) {
 } else if (isset($_GET["employee_internalqualifications"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if ($json = json_decode(file_get_contents('php://input'))) {
-    if ($json->pk_employee && $json->lastName) {
-        echo $ctrl->update_employee_admin($json);
-    } else if($json[0]->pk_formation || $json[0]->formativeOrganization) {
-        echo $ctrl->update_employee_formations($json);
-    } else {
+    if (!$json->pk_employee && $json->lastName) {
         echo $ctrl->add_employee($json);
+    } else if ($json->pk_employee && $json->lastName) {
+        echo $ctrl->update_employee_admin($json);
+    } else if ($json->formations == "empty") {
+        echo $ctrl->empty_employee_formations($json->fk_employee);
+    } else if ($json->profexps == "empty") {
+        echo $ctrl->empty_employee_professionnalExperiences($json->fk_employee);
+    } else if ($json[0]->pk_formation || $json[0]->formativeOrganization) {
+        echo $ctrl->update_employee_formations($json);
+    } else if ($json[0]->pk_professionnalExperience || $json[0]->organizationName) {
+        echo $ctrl->update_employee_professionnalExperiences($json);
+    } else {
+        echo "nothing yet";
     }
 } else if (isset($_FILES["picture"])) {
     $pk_employee = $_POST['id'];
@@ -49,13 +57,21 @@ if (isset($_GET["employees_list"])) {
     $target_dir = "../attachements/cv/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["cv"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['cv']['tmp_name']));
-    echo "cv";
 } else if (isset($_FILES["criminalRecord"])) {
     $pk_employee = $_POST['id'];
     $target_dir = "../attachements/criminalrecord/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["criminalRecord"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['criminalRecord']['tmp_name']));
-    echo "criminalRecord";
+} else if (isset($_FILES["formation"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/formation/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["formation"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['formation']['tmp_name']));
+} else if (isset($_FILES["profexp"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/professionnalexperience/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["profexp"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['profexp']['tmp_name']));
 } else if (isset($_GET["deleteId"])) {
     echo $ctrl->delete_employee($_GET["deleteId"]);
 }
@@ -153,6 +169,21 @@ class Ctrl
     public function update_employee_formations($employee_formations)
     {
         return $this->wrk->update_employee_formations($employee_formations);
+    }
+
+    public function empty_employee_formations($pk_employee)
+    {
+        return $this->wrk->empty_employee_formations($pk_employee);
+    }
+
+    public function update_employee_professionnalExperiences($employee_professionnalExperience)
+    {
+        return $this->wrk->update_employee_professionnalExperiences($employee_professionnalExperience);
+    }
+
+    public function empty_employee_professionnalExperiences($pk_employee)
+    {
+        return $this->wrk->empty_employee_professionnalExperiences($pk_employee);
     }
 }
 

@@ -111,6 +111,21 @@ class Wrk
     {
         return $this->wrk_employee->update_employee_formations($this->db_connection, $employee_formations);
     }
+
+    public function empty_employee_formations($pk_employee)
+    {
+        return $this->wrk_employee->empty_employee_formations($this->db_connection, $pk_employee);
+    }
+
+    public function update_employee_professionnalExperiences($employee_professionnalExperience)
+    {
+        return $this->wrk_employee->update_employee_professionnalExperiences($this->db_connection, $employee_professionnalExperience);
+    }
+
+    public function empty_employee_professionnalExperiences($pk_employee)
+    {
+        return $this->wrk_employee->empty_employee_professionnalExperiences($this->db_connection, $pk_employee);
+    }
 }
 
 

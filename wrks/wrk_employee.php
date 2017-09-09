@@ -58,7 +58,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee formation available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -78,7 +78,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee professionnal experience available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -261,62 +261,6 @@ class WrkEmployee
         if ($this->connection->connect_error) {
             die("Connection failed: " . $this->connection->connect_error);
         }
-        /*$sql = "SELECT * FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $oldFormations[] = $row;
-            }
-            foreach ($oldFormations as $oldFormation) {
-                $stillExist = false;
-                foreach ($employee_formations as $updatedFormation) {
-                    $stillExist = $oldFormation->pk_formation == $updatedFormation->pk_formation;
-                    if ($stillExist) {
-                        $sql = "UPDATE formation SET formativeOrganization = '$updatedFormation->formativeOrganization', 
-                          fk_formationType = '$updatedFormation->fk_formationType', EAScope = '$updatedFormation->EAScope', 
-                          fromDate = '$updatedFormation->fromDate', toDate = '$updatedFormation->toDate', 
-                          attachement = '$updatedFormation->attachement' WHERE formation.pk_formation = $updatedFormation->pk_formation";
-                        if ($this->connection->query($sql)) {
-                            $message += "Formation with pk $oldFormation->pk_formation updated \n";
-                        }else{
-                            $message += "Error while updating formation with pk $oldFormation->pk_formation \n";
-                        }
-                    }
-                }
-                if (!$stillExist) {
-                    $sql = "DELETE FROM formation WHERE formation.pk_formation = $oldFormation->pk_formation";
-                    if ($this->connection->query($sql)) {
-                        $message += "Formation with pk $oldFormation->pk_formation deleted \n";
-                    }else{
-                        $message += "Error while deleting formation with pk $oldFormation->pk_formation \n";
-                    }
-                }
-            }
-            foreach ($employee_formations as $updatedFormation) {
-                $alreadyExist = false;
-                foreach ($oldFormations as $oldFormation) {
-                    $alreadyExist = $oldFormation->pk_formation == $updatedFormation->pk_formation;
-                }
-                if(!$alreadyExist){
-                    $sql = "INSERT INTO formation (pk_formation, formativeOrganization, fk_formationType, EAScope, fromDate, toDate, attachement, fk_employee) 
-                      VALUES (NULL, '$updatedFormation->formativeOrganization', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
-                      '$updatedFormation->fromDate', '$updatedFormation->toDate', '$updatedFormation->attachement', '$updatedFormation->fk_employee')";
-                    if ($this->connection->query($sql)) {
-                        $message += "New formation « $updatedFormation->formativeOrganization » added \n";
-                    }else{
-                        $message += "Error while adding new formation « $updatedFormation->formativeOrganization » \n";
-                    }
-                }
-            }
-        } else {
-            $sql = "DELETE FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
-            if ($this->connection->query($sql)) {
-                $message += "Formations deleted \n";
-            }else{
-                $message += "Error while deleting formations \n";
-            }
-        }*/
-
 
         $sql = "SELECT * FROM formation WHERE formation.fk_employee = " . $employee_formations[0]->fk_employee;
         $result = mysqli_query($this->connection, $sql);
@@ -328,6 +272,7 @@ class WrkEmployee
 
         foreach ($employee_formations as $updatedFormation) {
             if ($updatedFormation->pk_formation == null) {
+                //if there's new formations (insert)
                 $sql = "INSERT INTO formation (pk_formation, formativeOrganization, fk_formationType, EAScope, fromDate, toDate, attachement, fk_employee) 
                       VALUES (NULL, '$updatedFormation->formativeOrganization', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
                       '$updatedFormation->fromDate', '$updatedFormation->toDate', '$updatedFormation->attachement', '$updatedFormation->fk_employee')";
@@ -337,6 +282,7 @@ class WrkEmployee
                     $message .= "Error while adding new formation « $updatedFormation->formativeOrganization » \n";
                 }
             } else {
+                //if formation already exist (update)
                 $sql = "UPDATE formation SET formativeOrganization = '$updatedFormation->formativeOrganization', 
                           fk_formationType = '$updatedFormation->fk_formationType', EAScope = '$updatedFormation->EAScope', 
                           fromDate = '$updatedFormation->fromDate', toDate = '$updatedFormation->toDate', 
@@ -358,13 +304,117 @@ class WrkEmployee
                 }
             }
             if (!$stillExist) {
-                $sql = "DELETE FROM formation WHERE formation.pk_formation = ". $oldFormation["pk_formation"];
+                $sql = "DELETE FROM formation WHERE formation.pk_formation = " . $oldFormation["pk_formation"];
                 if ($this->connection->query($sql)) {
                     $message .= "Formation with pk " . $oldFormation["pk_formation"] . " deleted \n";
                 } else {
                     $message .= "Error while deleting formation with pk " . $oldFormation["pk_formation"] . "\n";
                 }
             }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_formations(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM formation WHERE formation.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Formations with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting formations with fk employee " . $pk_employee . "\n";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_professionnalExperiences(DBConnection $db_connection, $employee_professionnalExperience)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM professionnalexperience WHERE professionnalexperience.fk_employee = " . $employee_professionnalExperience[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldProfessionnalExperiences[] = $row;
+            }
+        }
+
+        foreach ($employee_professionnalExperience as $updatedProfExp) {
+            if ($updatedProfExp->pk_professionnalExperience == null) {
+                //if there's new profexp (insiert)
+                $sql = "INSERT INTO professionnalexperience (pk_professionnalExperience, organizationName, organizationActivity, fonction, EAScope, fromDate, toDate, attachement, fk_employee) 
+                      VALUES (NULL, '$updatedProfExp->organizationName', '$updatedProfExp->organizationActivity', '$updatedProfExp->fonction', 
+                      '$updatedProfExp->EAScope', '$updatedProfExp->fromDate', '$updatedProfExp->toDate', '$updatedProfExp->attachement', '$updatedProfExp->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message .= "New professionnal experience « $updatedProfExp->organizationName » added \n";
+                } else {
+                    $message .= "Error while adding new professionnal experience « $updatedProfExp->organizationName » \n";
+                }
+            } else {
+                //if profexp already exist (update)
+                $sql = "UPDATE professionnalexperience SET organizationName = '$updatedProfExp->organizationName', 
+                          organizationActivity = '$updatedProfExp->organizationActivity', fonction = '$updatedProfExp->fonction', 
+                          EAScope = '$updatedProfExp->EAScope', fromDate = '$updatedProfExp->fromDate', 
+                          toDate = '$updatedProfExp->toDate', attachement = '$updatedProfExp->attachement' WHERE professionnalexperience.pk_professionnalExperience = $updatedProfExp->pk_professionnalExperience";
+                if ($this->connection->query($sql)) {
+                    $message .= "Professionnal experience with pk $updatedProfExp->pk_professionnalExperience updated \n";
+                } else {
+                    $message .= "Error while updating professionnal experience with pk $updatedProfExp->pk_professionnalExperience \n";
+                }
+            }
+        }
+        foreach ($oldProfessionnalExperiences as $oldProfessionnalExperience) {
+            $stillExist = false;
+            foreach ($employee_professionnalExperience as $updatedProfExp) {
+                $message .= "updated pk" . $updatedProfExp->pk_professionnalExperience . "\n" . "old pk " . $oldProfessionnalExperience["pk_professionnalExperience"] . "\n";
+                if ($updatedProfExp->pk_professionnalExperience == $oldProfessionnalExperience["pk_professionnalExperience"]) {
+
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM professionnalexperience WHERE professionnalexperience.pk_professionnalExperience = " . $oldProfessionnalExperience["pk_professionnalExperience"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Formation with pk " . $oldProfessionnalExperience["pk_professionnalExperience"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting professionnal experience with pk " . $oldProfessionnalExperience["pk_professionnalExperience"] . "\n";
+                }
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_professionnalExperiences(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM professionnalexperience WHERE professionnalexperience.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Professionnal experiences with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting professionnal experiences with fk employee " . $pk_employee . "\n";
         }
 
         $this->connection->close();
