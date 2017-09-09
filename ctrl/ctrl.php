@@ -40,14 +40,18 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->empty_employee_formations($json->fk_employee);
     } else if ($json->profexps == "empty") {
         echo $ctrl->empty_employee_professionnalExperiences($json->fk_employee);
-    }  else if ($json->conexps == "empty") {
+    } else if ($json->conexps == "empty") {
         echo $ctrl->empty_employee_consultingExperiences($json->fk_employee);
-    } else if ($json[0]->pk_formation || $json[0]->formativeOrganization) {
+    } else if ($json->auditexps == "empty") {
+        echo $ctrl->empty_employee_auditExperiences($json->fk_employee);
+    } else if ($json[0]->pk_formation || $json[0]->pk_formation == "0") {
         echo $ctrl->update_employee_formations($json);
-    } else if ($json[0]->pk_professionnalExperience || ($json[0]->organizationName && $json[0]->fonction && $json[0]->fromDate && $json[0]->toDate)) {
+    } else if ($json[0]->pk_professionnalExperience || $json[0]->pk_professionnalExperience == "0") {
         echo $ctrl->update_employee_professionnalExperiences($json);
-    } else if ($json[0]->organizationName && $json[0]->year) {
+    } else if ($json[0]->pk_consultingExperience ||$json[0]->pk_consultingExperience == "0") {
         echo $ctrl->update_employee_consultingExperiences($json);
+    } else if ($json[0]->pk_auditExperience || $json[0]->pk_auditExperience == "0") {
+        echo $ctrl->update_employee_auditExperiences($json);
     } else {
         echo "nothing yet";
     }
@@ -198,6 +202,16 @@ class Ctrl
     public function empty_employee_consultingExperiences($pk_employee)
     {
         return $this->wrk->empty_employee_consultingExperiences($pk_employee);
+    }
+
+    public function update_employee_auditExperiences($employee_auditExperiences)
+    {
+        return $this->wrk->update_employee_auditExperiences($employee_auditExperiences);
+    }
+
+    public function empty_employee_auditExperiences($pk_employee)
+    {
+        return $this->wrk->empty_employee_auditExperiences($pk_employee);
     }
 }
 

@@ -136,6 +136,16 @@ class Wrk
     {
         return $this->wrk_employee->empty_employee_consultingExperiences($this->db_connection, $pk_employee);
     }
+
+    public function update_employee_auditExperiences($employee_auditExperiences)
+    {
+        return $this->wrk_employee->update_employee_auditExperiences($this->db_connection, $employee_auditExperiences);
+    }
+
+    public function empty_employee_auditExperiences($pk_employee)
+    {
+        return $this->wrk_employee->empty_employee_auditExperiences($this->db_connection, $pk_employee);
+    }
 }
 
 

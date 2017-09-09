@@ -118,7 +118,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee audit experience available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -355,7 +355,7 @@ class WrkEmployee
         }
 
         foreach ($employee_professionnalExperience as $updatedProfExp) {
-            if ($updatedProfExp->pk_professionnalExperience == null) {
+            if ($updatedProfExp->pk_professionnalExperience == null || $updatedProfExp->pk_professionnalExperience == "0") {
                 //if there's new profexp (insiert)
                 $sql = "INSERT INTO professionnalexperience (pk_professionnalExperience, organizationName, organizationActivity, fonction, EAScope, fromDate, toDate, attachement, fk_employee) 
                       VALUES (NULL, '$updatedProfExp->organizationName', '$updatedProfExp->organizationActivity', '$updatedProfExp->fonction', 
@@ -439,7 +439,7 @@ class WrkEmployee
         }
 
         foreach ($employee_consultingExperiences as $updatedConExp) {
-            if ($updatedConExp->pk_consultingExperience == null) {
+            if ($updatedConExp->pk_consultingExperience == null || $updatedConExp->pk_consultingExperience == "0") {
                 //if there's new conexp (insiert)
                 $sql = "INSERT INTO consultingexperience (pk_consultingExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, organization, year, fk_employee) 
                       VALUES (NULL, '$updatedConExp->organizationName', '$updatedConExp->organizationActivity', '$updatedConExp->fk_NMSStandard', 
@@ -467,7 +467,6 @@ class WrkEmployee
             foreach ($employee_consultingExperiences as $updatedConExp) {
                 $message .= "updated pk" . $updatedConExp->pk_consultingExperience . "\n" . "old pk " . $oldConsultingExperience["pk_consultingExperience"] . "\n";
                 if ($updatedConExp->pk_consultingExperience == $oldConsultingExperience["pk_consultingExperience"]) {
-
                     $stillExist = true;
                 }
             }
@@ -499,6 +498,89 @@ class WrkEmployee
             $message .= "Consulting experiences with fk employee " . $pk_employee . " deleted \n";
         } else {
             $message .= "Error while deleting consulting experiences with fk employee " . $pk_employee . "\n";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_auditExperiences(DBConnection $db_connection, $employee_auditExperiences)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM auditexperience WHERE auditexperience.fk_employee = " . $employee_auditExperiences[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldAuditExperiences[] = $row;
+            }
+        }
+
+        foreach ($employee_auditExperiences as $updatedAuditExp) {
+            if ($updatedAuditExp->pk_auditExperience == null || $updatedAuditExp->pk_auditExperience == "0") {
+                //if there's new auditexp (insiert)
+                $sql = "INSERT INTO auditexperience (pk_auditExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, oc, year, fk_employee) 
+                      VALUES (NULL, '$updatedAuditExp->organizationName', '$updatedAuditExp->organizationActivity', '$updatedAuditExp->fk_NMSStandard', 
+                      '$updatedAuditExp->EAScope', '$updatedAuditExp->oc', '$updatedAuditExp->year', '$updatedAuditExp->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message .= "New audit experience « $updatedAuditExp->organizationName » added \n";
+                } else {
+                    $message .= "Error while adding new audit experience « $updatedAuditExp->organizationName » \n";
+                }
+            } else {
+                //if auditexp already exist (update)
+                $sql = "UPDATE auditexperience SET organizationName = '$updatedAuditExp->organizationName', 
+                          organizationActivity = '$updatedAuditExp->organizationActivity', fk_NMSStandard = '$updatedAuditExp->fk_NMSStandard', 
+                          EAScope = '$updatedAuditExp->EAScope', oc = '$updatedAuditExp->oc', 
+                          year = '$updatedAuditExp->year' WHERE auditexperience.pk_consultingExperience = $updatedAuditExp->pk_auditExperience";
+                if ($this->connection->query($sql)) {
+                    $message .= "Audit experience with pk $updatedAuditExp->pk_auditExperience updated \n";
+                } else {
+                    $message .= "Error while updating audit experience with pk $updatedAuditExp->pk_auditExperience \n";
+                }
+            }
+        }
+        foreach ($oldAuditExperiences as $oldAuditExperience) {
+            $stillExist = false;
+            foreach ($employee_auditExperiences as $updatedAuditExp) {
+                $message .= "updated pk" . $updatedAuditExp->pk_auditExperience . "\n" . "old pk " . $oldAuditExperience["pk_auditExperience"] . "\n";
+                if ($updatedAuditExp->pk_auditExperience == $oldAuditExperience["pk_auditExperience"]) {
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM auditexperience WHERE auditexperience.pk_auditExperience = " . $oldAuditExperience["pk_auditExperience"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Audit experience with pk " . $oldAuditExperience["pk_auditExperience"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting audit experience with pk " . $oldAuditExperience["pk_auditExperience"] . "\n";
+                }
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_auditExperiences(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM auditexperience WHERE auditexperience.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Audit experiences with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting audit experiences with fk employee " . $pk_employee . "\n";
         }
 
         $this->connection->close();
