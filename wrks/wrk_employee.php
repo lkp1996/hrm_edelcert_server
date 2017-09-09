@@ -98,7 +98,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee consulting experience available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -390,7 +390,7 @@ class WrkEmployee
             if (!$stillExist) {
                 $sql = "DELETE FROM professionnalexperience WHERE professionnalexperience.pk_professionnalExperience = " . $oldProfessionnalExperience["pk_professionnalExperience"];
                 if ($this->connection->query($sql)) {
-                    $message .= "Formation with pk " . $oldProfessionnalExperience["pk_professionnalExperience"] . " deleted \n";
+                    $message .= "Professionnal experience with pk " . $oldProfessionnalExperience["pk_professionnalExperience"] . " deleted \n";
                 } else {
                     $message .= "Error while deleting professionnal experience with pk " . $oldProfessionnalExperience["pk_professionnalExperience"] . "\n";
                 }
@@ -415,6 +415,90 @@ class WrkEmployee
             $message .= "Professionnal experiences with fk employee " . $pk_employee . " deleted \n";
         } else {
             $message .= "Error while deleting professionnal experiences with fk employee " . $pk_employee . "\n";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_consultingExperiences(DBConnection $db_connection, $employee_consultingExperiences)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM consultingexperience WHERE consultingexperience.fk_employee = " . $employee_consultingExperiences[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldConsultingExperiences[] = $row;
+            }
+        }
+
+        foreach ($employee_consultingExperiences as $updatedConExp) {
+            if ($updatedConExp->pk_consultingExperience == null) {
+                //if there's new conexp (insiert)
+                $sql = "INSERT INTO consultingexperience (pk_consultingExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, organization, year, fk_employee) 
+                      VALUES (NULL, '$updatedConExp->organizationName', '$updatedConExp->organizationActivity', '$updatedConExp->fk_NMSStandard', 
+                      '$updatedConExp->EAScope', '$updatedConExp->organization', '$updatedConExp->year', '$updatedConExp->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message .= "New consulting experience « $updatedConExp->organizationName » added \n";
+                } else {
+                    $message .= "Error while adding new consulting experience « $updatedConExp->organizationName » \n";
+                }
+            } else {
+                //if conexp already exist (update)
+                $sql = "UPDATE consultingexperience SET organizationName = '$updatedConExp->organizationName', 
+                          organizationActivity = '$updatedConExp->organizationActivity', fk_NMSStandard = '$updatedConExp->fk_NMSStandard', 
+                          EAScope = '$updatedConExp->EAScope', organization = '$updatedConExp->organization', 
+                          year = '$updatedConExp->year' WHERE consultingexperience.pk_consultingExperience = $updatedConExp->pk_consultingExperience";
+                if ($this->connection->query($sql)) {
+                    $message .= "Consulting experience with pk $updatedConExp->pk_consultingExperience updated \n";
+                } else {
+                    $message .= "Error while updating consulting experience with pk $updatedConExp->pk_consultingExperience \n";
+                }
+            }
+        }
+        foreach ($oldConsultingExperiences as $oldConsultingExperience) {
+            $stillExist = false;
+            foreach ($employee_consultingExperiences as $updatedConExp) {
+                $message .= "updated pk" . $updatedConExp->pk_consultingExperience . "\n" . "old pk " . $oldConsultingExperience["pk_consultingExperience"] . "\n";
+                if ($updatedConExp->pk_consultingExperience == $oldConsultingExperience["pk_consultingExperience"]) {
+
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM consultingexperience WHERE consultingexperience.pk_consultingExperience = " . $oldConsultingExperience["pk_consultingExperience"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Consulting experience with pk " . $oldConsultingExperience["pk_consultingExperience"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting consulting experience with pk " . $oldConsultingExperience["pk_consultingExperience"] . "\n";
+                }
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_consultingExperiences(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM consultingexperience WHERE consultingexperience.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Consulting experiences with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting consulting experiences with fk employee " . $pk_employee . "\n";
         }
 
         $this->connection->close();

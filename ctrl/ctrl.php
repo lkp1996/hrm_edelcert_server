@@ -40,10 +40,14 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->empty_employee_formations($json->fk_employee);
     } else if ($json->profexps == "empty") {
         echo $ctrl->empty_employee_professionnalExperiences($json->fk_employee);
+    }  else if ($json->conexps == "empty") {
+        echo $ctrl->empty_employee_consultingExperiences($json->fk_employee);
     } else if ($json[0]->pk_formation || $json[0]->formativeOrganization) {
         echo $ctrl->update_employee_formations($json);
-    } else if ($json[0]->pk_professionnalExperience || $json[0]->organizationName) {
+    } else if ($json[0]->pk_professionnalExperience || ($json[0]->organizationName && $json[0]->fonction && $json[0]->fromDate && $json[0]->toDate)) {
         echo $ctrl->update_employee_professionnalExperiences($json);
+    } else if ($json[0]->organizationName && $json[0]->year) {
+        echo $ctrl->update_employee_consultingExperiences($json);
     } else {
         echo "nothing yet";
     }
@@ -184,6 +188,16 @@ class Ctrl
     public function empty_employee_professionnalExperiences($pk_employee)
     {
         return $this->wrk->empty_employee_professionnalExperiences($pk_employee);
+    }
+
+    public function update_employee_consultingExperiences($employee_consultingExperiences)
+    {
+        return $this->wrk->update_employee_consultingExperiences($employee_consultingExperiences);
+    }
+
+    public function empty_employee_consultingExperiences($pk_employee)
+    {
+        return $this->wrk->empty_employee_consultingExperiences($pk_employee);
     }
 }
 
