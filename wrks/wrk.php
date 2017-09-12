@@ -146,6 +146,41 @@ class Wrk
     {
         return $this->wrk_employee->empty_employee_auditExperiences($this->db_connection, $pk_employee);
     }
+
+    public function update_internal_qualifications($internalQualifications)
+    {
+        return $this->wrk_internalqualification->update_internal_qualifications($this->db_connection, $internalQualifications);
+    }
+
+    public function update_employee_auditObservations($employee_auditObservations)
+    {
+        return $this->wrk_employee->update_employee_auditObservations($this->db_connection, $employee_auditObservations);
+    }
+
+    public function empty_employee_auditObservations($pk_employee)
+    {
+        return $this->wrk_employee->empty_employee_auditObservations($this->db_connection, $pk_employee);
+    }
+
+    public function update_employee_mandateSheets($employee_mandateSheets)
+    {
+        return $this->wrk_employee->update_employee_mandateSheets($this->db_connection, $employee_mandateSheets);
+    }
+
+    public function empty_employee_mandateSheets($pk_employee)
+    {
+        return $this->wrk_employee->empty_employee_mandateSheets($this->db_connection, $pk_employee);
+    }
+
+    public function update_employee_objectives($employee_objectives)
+    {
+        return $this->wrk_employee->update_employee_objectives($this->db_connection, $employee_objectives);
+    }
+
+    public function empty_employee_objectives($pk_employee)
+    {
+        return $this->wrk_employee->empty_employee_objectives($this->db_connection, $pk_employee);
+    }
 }
 
 

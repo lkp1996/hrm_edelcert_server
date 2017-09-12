@@ -138,7 +138,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee audit observation available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -163,7 +163,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee objective available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -183,7 +183,7 @@ class WrkEmployee
                 $emparray[] = $row;
             }
         } else {
-            echo "No employee mandatesheet available";
+            //echo "[]";
         }
         mysqli_close($this->connection);
         return json_encode($emparray);
@@ -537,7 +537,7 @@ class WrkEmployee
                 $sql = "UPDATE auditexperience SET organizationName = '$updatedAuditExp->organizationName', 
                           organizationActivity = '$updatedAuditExp->organizationActivity', fk_NMSStandard = '$updatedAuditExp->fk_NMSStandard', 
                           EAScope = '$updatedAuditExp->EAScope', oc = '$updatedAuditExp->oc', 
-                          year = '$updatedAuditExp->year' WHERE auditexperience.pk_consultingExperience = $updatedAuditExp->pk_auditExperience";
+                          year = '$updatedAuditExp->year' WHERE auditexperience.pk_auditExperience = $updatedAuditExp->pk_auditExperience";
                 if ($this->connection->query($sql)) {
                     $message .= "Audit experience with pk $updatedAuditExp->pk_auditExperience updated \n";
                 } else {
@@ -581,6 +581,249 @@ class WrkEmployee
             $message .= "Audit experiences with fk employee " . $pk_employee . " deleted \n";
         } else {
             $message .= "Error while deleting audit experiences with fk employee " . $pk_employee . "\n";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_auditObservations(DBConnection $db_connection, $employee_auditObservations)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM auditobservation WHERE auditobservation.fk_employee = " . $employee_auditObservations[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldAuditObservations[] = $row;
+            }
+        }
+
+        foreach ($employee_auditObservations as $updatedAuditObs) {
+            if ($updatedAuditObs->pk_auditObservation == null || $updatedAuditObs->pk_auditObservation == "0") {
+                //if there's new auditobs (insiert)
+                $sql = "INSERT INTO auditobservation (pk_auditObservation, organization, observer, attachement, EAScope, comment, date, fk_employee) 
+                      VALUES (NULL, '$updatedAuditObs->organization', '$updatedAuditObs->observer', '$updatedAuditObs->attachement', 
+                      '$updatedAuditObs->EAScope', '$updatedAuditObs->comment', '$updatedAuditObs->date', '$updatedAuditObs->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message .= "New audit observation « $updatedAuditObs->organization » added \n";
+                } else {
+                    $message .= "Error while adding new audit observation « $updatedAuditObs->organization » \n";
+                }
+            } else {
+                //if auditobs already exist (update)
+                $sql = "UPDATE auditobservation SET organization = '$updatedAuditObs->organization', observer = '$updatedAuditObs->observer', 
+                      attachement = '$updatedAuditObs->attachement', comment = '$updatedAuditObs->comment', date = '$updatedAuditObs->date' 
+                      WHERE auditobservation.pk_auditObservation = $updatedAuditObs->pk_auditObservation";
+                if ($this->connection->query($sql)) {
+                    $message .= "Audit experience with pk $updatedAuditObs->pk_auditObservation updated \n";
+                } else {
+                    $message .= "Error while updating audit experience with pk $updatedAuditObs->pk_auditObservation \n";
+                }
+            }
+        }
+        foreach ($oldAuditObservations as $oldAuditObservation) {
+            $stillExist = false;
+            foreach ($employee_auditObservations as $updatedAuditObs) {
+                if ($updatedAuditObs->pk_auditObservation == $oldAuditObservation["pk_auditObservation"]) {
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM auditobservation WHERE auditobservation.pk_auditObservation = " . $oldAuditObservation["pk_auditObservation"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Audit observation with pk " . $oldAuditObservation["pk_auditObservation"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting audit observation with pk " . $oldAuditObservation["pk_auditObservation"] . "\n";
+                }
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_auditObservations(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM auditobservation WHERE auditobservation.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Audit observations with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting audit observations with fk employee " . $pk_employee . "\n";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_mandateSheets(DBConnection $db_connection, $employee_mandateSheets)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM mandatesheet WHERE mandatesheet.fk_employee = " . $employee_mandateSheets[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldMandateSheets[] = $row;
+            }
+        }
+
+        foreach ($employee_mandateSheets as $updatedMandateSheet) {
+            if ($updatedMandateSheet->pk_mandateSheet == null || $updatedMandateSheet->pk_mandateSheet == "0") {
+                //if there's new mandate sheet (insert)
+                $sql = "INSERT INTO mandatesheet (pk_mandateSheet, organization, EAScope, date, fees, attachement, fk_employee) 
+                      VALUES (NULL, '$updatedMandateSheet->organization', '$updatedMandateSheet->EAScope', '$updatedMandateSheet->date', 
+                      '$updatedMandateSheet->fees', '$updatedMandateSheet->attachement', '$updatedMandateSheet->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message .= "New mandate sheet « $updatedMandateSheet->organization » added \n";
+                } else {
+                    $message .= "Error while adding new mandate sheet « $updatedMandateSheet->organization » \n";
+                }
+            } else {
+                //if mandate sheet already exist (update)
+                $sql = "UPDATE mandatesheet SET organization = '$updatedMandateSheet->organization', EAScope = '$updatedMandateSheet->EAScope', 
+                      date = '$updatedMandateSheet->date', fees = '$updatedMandateSheet->fees', attachement = '$updatedMandateSheet->attachement' 
+                      WHERE mandatesheet.pk_mandateSheet = $updatedMandateSheet->pk_mandateSheet";
+                if ($this->connection->query($sql)) {
+                    $message .= "Mandate sheet with pk $updatedMandateSheet->pk_mandateSheet updated \n";
+                } else {
+                    $message .= "Error while updating mandate sheet with pk $updatedMandateSheet->pk_mandateSheet \n";
+                }
+            }
+        }
+        foreach ($oldMandateSheets as $oldMandateSheet) {
+            $stillExist = false;
+            foreach ($employee_mandateSheets as $updatedMandateSheet) {
+                if ($updatedMandateSheet->pk_mandateSheet == $oldMandateSheet["pk_mandateSheet"]) {
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM mandatesheet WHERE mandatesheet.pk_mandateSheet = " . $oldMandateSheet["pk_mandateSheet"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Mandate sheet with pk " . $oldMandateSheet["pk_mandateSheet"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting mandate sheet with pk " . $oldMandateSheet["pk_mandateSheet"] . "\n";
+                }
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_mandateSheets(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM mandatesheet WHERE mandatesheet.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Mandate sheet with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting mandate sheet with fk employee " . $pk_employee . "\n";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_employee_objectives(DBConnection $db_connection, $employee_objectives)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM objective WHERE objective.fk_employee = " . $employee_objectives[0]->fk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $oldObjectives[] = $row;
+            }
+        }
+
+        foreach ($employee_objectives as $updatedObjective) {
+            if ($updatedObjective->pk_objective == null || $updatedObjective->pk_objective == "0") {
+                //if there's new objective (insert)
+                $sql = "INSERT INTO objective (pk_objective, mediumLongTermObjectives, auditorStrategy, date, validate, fk_employee) 
+                      VALUES (NULL, '$updatedObjective->mediumLongTermObjectives', '$updatedObjective->auditorStrategy', '$updatedObjective->date', 
+                      '$updatedObjective->validate', '$updatedObjective->fk_employee')";
+                if ($this->connection->query($sql)) {
+                    $message .= "New objective « $updatedObjective->mediumLongTermObjectives » added \n";
+                } else {
+                    $message .= "Error while adding new objective « $updatedObjective->mediumLongTermObjectives » \n";
+                }
+            } else {
+                //if objective already exist (update)
+                $sql = "UPDATE objective SET mediumLongTermObjectives = '$updatedObjective->mediumLongTermObjectives', 
+                      auditorStrategy = '$updatedObjective->auditorStrategy', date = '$updatedObjective->date', 
+                      validate = '$updatedObjective->validate' WHERE objective.pk_objective = $updatedObjective->pk_objective";
+                if ($this->connection->query($sql)) {
+                    $message .= "Objective with pk $updatedObjective->pk_objective updated \n";
+                } else {
+                    $message .= "Error while updating objective with pk $updatedObjective->pk_objective \n";
+                }
+            }
+        }
+        foreach ($oldObjectives as $oldObjective) {
+            $stillExist = false;
+            foreach ($employee_objectives as $updatedObjective) {
+                if ($updatedObjective->pk_objective == $oldObjective["pk_objective"]) {
+                    $stillExist = true;
+                }
+            }
+            if (!$stillExist) {
+                $sql = "DELETE FROM objective WHERE objective.pk_objective = " . $oldObjective["pk_objective"];
+                if ($this->connection->query($sql)) {
+                    $message .= "Objective with pk " . $oldObjective["pk_objective"] . " deleted \n";
+                } else {
+                    $message .= "Error while deleting objective with pk " . $oldObjective["pk_objective"] . "\n";
+                }
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function empty_employee_objectives(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "DELETE FROM objective WHERE objective.fk_employee = " . $pk_employee;
+        if ($this->connection->query($sql)) {
+            $message .= "Objective with fk employee " . $pk_employee . " deleted \n";
+        } else {
+            $message .= "Error while deleting objective with fk employee " . $pk_employee . "\n";
         }
 
         $this->connection->close();

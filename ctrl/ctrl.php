@@ -44,14 +44,28 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->empty_employee_consultingExperiences($json->fk_employee);
     } else if ($json->auditexps == "empty") {
         echo $ctrl->empty_employee_auditExperiences($json->fk_employee);
+    } else if ($json->auditObs == "empty") {
+        echo $ctrl->empty_employee_auditObservations($json->fk_employee);
+    } else if ($json->mandateSheets == "empty") {
+        echo $ctrl->empty_employee_mandateSheets($json->fk_employee);
+    } else if ($json->objectives == "empty") {
+        echo $ctrl->empty_employee_objectives($json->fk_employee);
     } else if ($json[0]->pk_formation || $json[0]->pk_formation == "0") {
         echo $ctrl->update_employee_formations($json);
     } else if ($json[0]->pk_professionnalExperience || $json[0]->pk_professionnalExperience == "0") {
         echo $ctrl->update_employee_professionnalExperiences($json);
-    } else if ($json[0]->pk_consultingExperience ||$json[0]->pk_consultingExperience == "0") {
+    } else if ($json[0]->pk_consultingExperience || $json[0]->pk_consultingExperience == "0") {
         echo $ctrl->update_employee_consultingExperiences($json);
     } else if ($json[0]->pk_auditExperience || $json[0]->pk_auditExperience == "0") {
         echo $ctrl->update_employee_auditExperiences($json);
+    } else if ($json[0]->pk_internalQualifications) {
+        echo $ctrl->update_internal_qualifications($json);
+    } else if ($json[0]->pk_auditObservation || $json[0]->pk_auditObservation == "0") {
+        echo $ctrl->update_employee_auditObservations($json);
+    } else if ($json[0]->pk_mandateSheet || $json[0]->pk_mandateSheet == "0") {
+        echo $ctrl->update_employee_mandateSheets($json);
+    } else if ($json[0]->pk_objective || $json[0]->pk_objective == "0") {
+        echo $ctrl->update_employee_objectives($json);
     } else {
         echo "nothing yet";
     }
@@ -80,6 +94,21 @@ if (isset($_GET["employees_list"])) {
     $target_dir = "../attachements/professionnalexperience/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["profexp"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['profexp']['tmp_name']));
+} else if (isset($_FILES["intqual"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/internalqualification/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["intqual"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['intqual']['tmp_name']));
+} else if (isset($_FILES["auditobs"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/auditobservation/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["auditobs"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['auditobs']['tmp_name']));
+} else if (isset($_FILES["mandatesheets"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/mandatesheet/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["mandatesheets"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['mandatesheets']['tmp_name']));
 } else if (isset($_GET["deleteId"])) {
     echo $ctrl->delete_employee($_GET["deleteId"]);
 }
@@ -212,6 +241,41 @@ class Ctrl
     public function empty_employee_auditExperiences($pk_employee)
     {
         return $this->wrk->empty_employee_auditExperiences($pk_employee);
+    }
+
+    public function update_internal_qualifications($internalQualifications)
+    {
+        return $this->wrk->update_internal_qualifications($internalQualifications);
+    }
+
+    public function update_employee_auditObservations($employee_auditObservations)
+    {
+        return $this->wrk->update_employee_auditObservations($employee_auditObservations);
+    }
+
+    public function empty_employee_auditObservations($pk_employee)
+    {
+        return $this->wrk->empty_employee_auditObservations($pk_employee);
+    }
+
+    public function update_employee_mandateSheets($employee_mandateSheets)
+    {
+        return $this->wrk->update_employee_mandateSheets($employee_mandateSheets);
+    }
+
+    public function empty_employee_mandateSheets($pk_employee)
+    {
+        return $this->wrk->empty_employee_mandateSheets($pk_employee);
+    }
+
+    public function update_employee_objectives($employee_objectives)
+    {
+        return $this->wrk->update_employee_objectives($employee_objectives);
+    }
+
+    public function empty_employee_objectives($pk_employee)
+    {
+        return $this->wrk->empty_employee_objectives($pk_employee);
     }
 }
 
