@@ -242,7 +242,7 @@ class WrkEmployee
         $sql = "UPDATE employee SET lastName = '$employee->lastName', firstName = '$employee->firstName', birthDate = '$employee->birthDate', 
                   address = '$employee->address', postCode = '$employee->postCode', location = '$employee->location', avs = '$employee->avs', 
                   phone = '$employee->phone', email = '$employee->email', currentTitle = '$employee->currentTitle', comingToOfficeDate = '$employee->comingToOfficeDate', 
-                  currentHourlyWage = '$employee->currentHourlyWage', cv = '$employee->cv', criminalRecord = '$employee->criminalRecord' WHERE employee.pk_employee = $employee->pk_employee";
+                  currentHourlyWage = '$employee->currentHourlyWage', picture = '$employee->picture',cv = '$employee->cv', criminalRecord = '$employee->criminalRecord' WHERE employee.pk_employee = $employee->pk_employee";
         if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
