@@ -196,9 +196,11 @@ class WrkEmployee
         if ($this->connection->connect_error) {
             die("Connection failed: " . $this->connection->connect_error);
         }
+        //$username = checkUsername($employee->firstName . $employee->lastName);
+        $username = $employee->firstName . $employee->lastName;
 
-        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
-            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
+        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
+            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $username . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
             . "', '" . $employee->comingToOfficeDate . "', '" . $employee->currentHourlyWage . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
         if ($this->connection->query($sql)) {
@@ -828,6 +830,22 @@ class WrkEmployee
 
         $this->connection->close();
         return $message;
+    }
+
+    private function checkUsername($username){
+        $sql = "SELECT username FROM employee";
+        $result = mysqli_query($this->connection, $sql);
+        $num = 0;
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                if($row["username"] == $username){
+                    $username .= $num;
+                    $num++;
+                }
+            }
+        }
+        return $username;
     }
 
     public function create_dirs($pk_employee)

@@ -32,7 +32,9 @@ if (isset($_GET["employees_list"])) {
 } else if (isset($_GET["employee_internalqualifications"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if ($json = json_decode(file_get_contents('php://input'))) {
-    if (!$json->pk_employee && $json->lastName) {
+    if ($json->username && $json->password) {
+        echo $ctrl->login($json);
+    } else if (!$json->pk_employee && $json->lastName) {
         echo $ctrl->add_employee($json);
     } else if ($json->pk_employee && $json->lastName) {
         echo $ctrl->update_employee_admin($json);
@@ -276,6 +278,11 @@ class Ctrl
     public function empty_employee_objectives($pk_employee)
     {
         return $this->wrk->empty_employee_objectives($pk_employee);
+    }
+
+    public function login($user)
+    {
+        return $this->wrk->login($user);
     }
 }
 

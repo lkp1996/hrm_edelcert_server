@@ -4,6 +4,7 @@ include("wrk_employee.php");
 include("wrk_formation_type.php");
 include("wrk_nmsstandard.php");
 include("wrk_internal_qualification.php");
+include("wrk_login.php");
 
 class Wrk
 {
@@ -12,17 +13,19 @@ class Wrk
     private $wrk_formationtype;
     private $wrk_nmsstandard;
     private $wrk_internalqualification;
+    private $wrk_login;
 
     public function __construct()
     {
         //dev
         $this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
         //prod
-        //$this->db_connection = new BDConnection("speechme_speechmeeting", "speechme_root", "Emf+123", "localhost");
+        //$this->db_connection = new BDConnection("", "", "", "localhost");
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
         $this->wrk_internalqualification = new WrkInternalQualification();
+        $this->wrk_login = new WrkLogin();
     }
 
     public function get_employees_list()
@@ -180,6 +183,11 @@ class Wrk
     public function empty_employee_objectives($pk_employee)
     {
         return $this->wrk_employee->empty_employee_objectives($this->db_connection, $pk_employee);
+    }
+
+    public function login($user)
+    {
+        return $this->wrk_login->login($this->db_connection, $user);
     }
 }
 
