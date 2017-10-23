@@ -2,7 +2,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Process-Data");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Credentials: true");
 include("../wrks/wrk.php");
+
 $ctrl = new Ctrl();
 
 if (isset($_GET["employees_list"])) {
@@ -31,7 +33,9 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_nmsstandard_list();
 } else if (isset($_GET["employee_internalqualifications"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
-} else if ($json = json_decode(file_get_contents('php://input'))) {
+} else if (isset($_GET["getUserID"])) {
+    echo $ctrl->get_userId($_GET["getUserID"]);
+}else if ($json = json_decode(file_get_contents('php://input'))) {
     if ($json->username && $json->password) {
         echo $ctrl->login($json);
     } else if (!$json->pk_employee && $json->lastName) {
@@ -283,6 +287,11 @@ class Ctrl
     public function login($user)
     {
         return $this->wrk->login($user);
+    }
+
+    public function get_userId($username)
+    {
+        return $this->wrk->get_userId($username);
     }
 }
 

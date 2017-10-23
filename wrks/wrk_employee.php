@@ -832,20 +832,39 @@ class WrkEmployee
         return $message;
     }
 
-    private function checkUsername($username){
+    private function checkUsername($username)
+    {
         $sql = "SELECT username FROM employee";
         $result = mysqli_query($this->connection, $sql);
         $num = 0;
 
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                if($row["username"] == $username){
+                if ($row["username"] == $username) {
                     $username .= $num;
                     $num++;
                 }
             }
         }
         return $username;
+    }
+
+    public function get_userId(DBConnection $db_connection, $username)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if (!$this->connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT pk_employee FROM employee WHERE username = '$username'";
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row["pk_employee"];
+            }
+        }
+        mysqli_close($this->connection);
+        return $emparray;
     }
 
     public function create_dirs($pk_employee)

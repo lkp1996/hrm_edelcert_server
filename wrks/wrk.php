@@ -6,6 +6,8 @@ include("wrk_nmsstandard.php");
 include("wrk_internal_qualification.php");
 include("wrk_login.php");
 
+session_start();
+
 class Wrk
 {
     private $db_connection;
@@ -188,6 +190,11 @@ class Wrk
     public function login($user)
     {
         return $this->wrk_login->login($this->db_connection, $user);
+    }
+
+    public function get_userId($username)
+    {
+        return $this->wrk_employee->get_userId($this->db_connection, $username);
     }
 }
 
