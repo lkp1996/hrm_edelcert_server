@@ -20,7 +20,7 @@ class WrkEmployee
         } else {
             echo "No employees available";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -40,7 +40,7 @@ class WrkEmployee
         } else {
             echo "No employee administration available";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -60,7 +60,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -80,7 +80,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -100,7 +100,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -120,7 +120,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -140,7 +140,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -165,7 +165,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -185,7 +185,7 @@ class WrkEmployee
         } else {
             //echo "[]";
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
         return json_encode($emparray);
     }
 
@@ -846,6 +846,7 @@ class WrkEmployee
                 }
             }
         }
+        $this->connection->close();
         return $username;
     }
 
@@ -863,7 +864,50 @@ class WrkEmployee
                 $emparray = $row["pk_employee"];
             }
         }
-        mysqli_close($this->connection);
+        $this->connection->close();
+        return $emparray;
+    }
+
+    public function update_password(DBConnection $db_connection, $employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        $sql = "SELECT * FROM employee WHERE pk_employee = '$employee->pk_employee' AND password = '$employee->oldPassword'";
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $sql = "UPDATE employee SET password = '$employee->newPassword' WHERE employee.pk_employee = $employee->pk_employee";
+            if ($this->connection->query($sql)) {
+                $message = 1;
+            } else {
+                $message = 2;
+            }
+        } else {
+            $message = 3;
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function is_admin(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if (!$this->connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT isAdmin FROM employee WHERE pk_employee = $pk_employee";
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row["isAdmin"];
+            }
+        }
+        $this->connection->close();
         return $emparray;
     }
 

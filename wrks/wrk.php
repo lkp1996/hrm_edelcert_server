@@ -196,6 +196,16 @@ class Wrk
     {
         return $this->wrk_employee->get_userId($this->db_connection, $username);
     }
+
+    public function update_password($employee)
+    {
+        return $this->wrk_employee->update_password($this->db_connection, $employee);
+    }
+
+    public function is_admin($pk_employee)
+    {
+        return $this->wrk_employee->is_admin($this->db_connection, $pk_employee);
+    }
 }
 
 

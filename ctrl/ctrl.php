@@ -35,7 +35,9 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if (isset($_GET["getUserID"])) {
     echo $ctrl->get_userId($_GET["getUserID"]);
-}else if ($json = json_decode(file_get_contents('php://input'))) {
+} else if (isset($_GET["isAdmin"])) {
+    echo $ctrl->is_admin($_GET["isAdmin"]);
+} else if ($json = json_decode(file_get_contents('php://input'))) {
     if ($json->username && $json->password) {
         echo $ctrl->login($json);
     } else if (!$json->pk_employee && $json->lastName) {
@@ -56,6 +58,8 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->empty_employee_mandateSheets($json->fk_employee);
     } else if ($json->objectives == "empty") {
         echo $ctrl->empty_employee_objectives($json->fk_employee);
+    } else if ($json->pk_employee && $json->oldPassword && $json->newPassword) {
+        echo $ctrl->update_password($json);
     } else if ($json[0]->pk_formation || $json[0]->pk_formation == "0") {
         echo $ctrl->update_employee_formations($json);
     } else if ($json[0]->pk_professionnalExperience || $json[0]->pk_professionnalExperience == "0") {
@@ -292,6 +296,16 @@ class Ctrl
     public function get_userId($username)
     {
         return $this->wrk->get_userId($username);
+    }
+
+    public function update_password($employee)
+    {
+        return $this->wrk->update_password($employee);
+    }
+
+    public function is_admin($pk_employee)
+    {
+        return $this->wrk->is_admin($pk_employee);
     }
 }
 
