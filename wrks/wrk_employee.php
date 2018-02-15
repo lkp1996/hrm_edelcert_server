@@ -198,9 +198,10 @@ class WrkEmployee
         }
         //$username = checkUsername($employee->firstName . $employee->lastName);
         $username = $employee->firstName . $employee->lastName;
+        $password = $this->generate_password();
 
-        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
-            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $username . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
+        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
+            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $username . "', '" . md5($password) . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
             . "', '" . $employee->comingToOfficeDate . "', '" . $employee->currentHourlyWage . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
         if ($this->connection->query($sql)) {
@@ -211,6 +212,7 @@ class WrkEmployee
 
         $this->connection->close();
         $this->create_dirs($last_id);
+        $this->generate_mail_content($employee->email, $username, $password);
         return $last_id;
     }
 
@@ -832,24 +834,6 @@ class WrkEmployee
         return $message;
     }
 
-    private function checkUsername($username)
-    {
-        $sql = "SELECT username FROM employee";
-        $result = mysqli_query($this->connection, $sql);
-        $num = 0;
-
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                if ($row["username"] == $username) {
-                    $username .= $num;
-                    $num++;
-                }
-            }
-        }
-        $this->connection->close();
-        return $username;
-    }
-
     public function get_userId(DBConnection $db_connection, $username)
     {
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
@@ -921,6 +905,57 @@ class WrkEmployee
         mkdir("../attachements/mandatesheet/$pk_employee");
         mkdir("../attachements/picture/$pk_employee");
         mkdir("../attachements/professionnalexperience/$pk_employee");
+    }
+
+    private function checkUsername($username)
+    {
+        $sql = "SELECT username FROM employee";
+        $result = mysqli_query($this->connection, $sql);
+        $num = 0;
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                if ($row["username"] == $username) {
+                    $username .= $num;
+                    $num++;
+                }
+            }
+        }
+        $this->connection->close();
+        return $username;
+    }
+
+    private function generate_password()
+    {
+        $length = 8;
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $count = mb_strlen($chars);
+
+        for ($i = 0, $result = ''; $i < $length; $i++) {
+            $index = rand(0, $count - 1);
+            $result .= mb_substr($chars, $index, 1);
+        }
+
+        return $result;
+    }
+
+    private function generate_mail_content($dest, $username, $password)
+    {
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: <direction@edelcert.ch>' . "\r\n";
+        $message = "<html>
+        <head>
+        <title>Indentifiant HRM Edelcert</title>
+        </head>
+        <body>
+        <p>nom d'utilisateur : " . $username . " </p>
+        <p>mot de passe : " . $password . " </p>
+        </body>
+        </html>
+        ";
+
+        mail($dest, "Indentifiant HRM Edelcert", $message, $headers);
     }
 }
 
