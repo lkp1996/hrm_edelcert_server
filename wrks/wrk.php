@@ -30,9 +30,9 @@ class Wrk
         $this->wrk_login = new WrkLogin();
     }
 
-    public function get_employees_list()
+    public function get_employees_list($pk_employee)
     {
-        return $this->wrk_employee->get_employees_list($this->db_connection);
+        return $this->wrk_employee->get_employees_list($this->db_connection, $pk_employee);
     }
 
     public function get_employee_administration($pk_employee)

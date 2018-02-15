@@ -8,7 +8,7 @@ include("../wrks/wrk.php");
 $ctrl = new Ctrl();
 
 if (isset($_GET["employees_list"])) {
-    echo $ctrl->display_employees_list();
+    echo $ctrl->display_employees_list($_GET["employees_list"]);
 } else if (isset($_GET["employee_administration"])) {
     echo $ctrl->display_employee_administration($_GET["employee_administration"]);
 } else if (isset($_GET["employee_formation"])) {
@@ -133,9 +133,9 @@ class Ctrl
         $this->wrk = new Wrk();
     }
 
-    public function display_employees_list()
+    public function display_employees_list($pk_employee)
     {
-        return $this->wrk->get_employees_list();
+        return $this->wrk->get_employees_list($pk_employee);
     }
 
     public function display_employee_administration($pk_employee)

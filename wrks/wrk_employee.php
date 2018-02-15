@@ -4,14 +4,14 @@ class WrkEmployee
 {
     private $connection;
 
-    public function get_employees_list(DBConnection $db_connection)
+    public function get_employees_list(DBConnection $db_connection, $pk_employee)
     {
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
         mysqli_set_charset($this->connection, "utf8");
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT pk_employee, lastName, firstName, phone, email, currentTitle FROM employee";
+        $sql = "SELECT pk_employee, lastName, firstName, phone, email, currentTitle FROM employee WHERE pk_employee != $pk_employee";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
