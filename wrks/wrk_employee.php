@@ -199,9 +199,13 @@ class WrkEmployee
         //$username = checkUsername($employee->firstName . $employee->lastName);
         $username = $employee->firstName . $employee->lastName;
         $password = $this->generate_password();
+        $isAdmin = 0;
+        if($employee->role == "admin"){
+            $isAdmin = 1;
+        }
 
-        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
-            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $username . "', '" . md5($password) . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
+        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, isAdmin, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
+            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $username . "', '" . md5($password) . "', '" . $isAdmin . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
             . "', '" . $employee->comingToOfficeDate . "', '" . $employee->currentHourlyWage . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
         if ($this->connection->query($sql)) {
@@ -949,8 +953,13 @@ class WrkEmployee
         <title>Indentifiant HRM Edelcert</title>
         </head>
         <body>
-        <p>nom d'utilisateur : " . $username . " </p>
-        <p>mot de passe : " . $password . " </p>
+        <p>Nous avons le plaisir de vous faire parvenir votre indentifiant ainsi que votre mot de passe pour accéder à la plateforme <a href=\"http://hrm-edelcert.ch/\">RH Edelcert & Inspectorat</a> (<a href=\"http://hrm-edelcert.ch/\">http://hrm-edelcert.ch/</a>).<br>Vous pouvez dès lors compléter et mettre à jour régulièrement votre dossier personnel d'auditeur.</p>
+        <p><b>Nom d'utilisateur</b> : " . $username . "<br><b>Mot de passe</b> : " . $password . " </p>
+        <p>En vous remerciant de prendre note de ce qui précède, veuillez recevoir, nos meilleures salutations</p>
+        <br>
+        <p>Stéphane Perrottet, directeur</p>
+        <p>EdelCert & InSpectorat<br>Av. de la Gare 8<br>CH - 1700 Fribourg</p>
+        <p>0041 79 617 33 61</p>
         </body>
         </html>
         ";
