@@ -22,7 +22,7 @@ class Wrk
         //dev
         $this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
         //prod
-        //$this->db_connection = new BDConnection("", "", "", "localhost");
+        //$this->db_connection = new BDConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
