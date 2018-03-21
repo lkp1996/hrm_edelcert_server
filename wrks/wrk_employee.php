@@ -205,9 +205,9 @@ class WrkEmployee
         }
 
         $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, isAdmin, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
-            VALUES (NULL, '" . $employee->lastName . "', '" . $employee->firstName . "', '" . $username . "', '" . md5($password) . "', '" . $isAdmin . "', '" . $employee->birthDate . "', '" . $employee->address . "', '" . $employee->postCode . "', '"
+            VALUES (NULL, '" . addslashes($employee->lastName) . "', '" . addslashes($employee->firstName) . "', '" . addslashes($username) . "', '" . md5($password) . "', '" . $isAdmin . "', '" . $employee->birthDate . "', '" . addslashes($employee->address) . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
-            . "', '" . $employee->comingToOfficeDate . "', '" . $employee->currentHourlyWage . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
+            . "', '" . $employee->comingToOfficeDate . "', '" . addslashes($employee->currentHourlyWage) . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
         if ($this->connection->query($sql)) {
             $last_id = $this->connection->insert_id;
         } else {
@@ -247,10 +247,10 @@ class WrkEmployee
             die("Connection failed: " . $this->connection->connect_error);
         }
 
-        $sql = "UPDATE employee SET lastName = '$employee->lastName', firstName = '$employee->firstName', birthDate = '$employee->birthDate', 
-                  address = '$employee->address', postCode = '$employee->postCode', location = '$employee->location', avs = '$employee->avs', 
-                  phone = '$employee->phone', email = '$employee->email', currentTitle = '$employee->currentTitle', comingToOfficeDate = '$employee->comingToOfficeDate', 
-                  currentHourlyWage = '$employee->currentHourlyWage', picture = '$employee->picture',cv = '$employee->cv', criminalRecord = '$employee->criminalRecord' WHERE employee.pk_employee = $employee->pk_employee";
+        $sql = "UPDATE employee SET lastName = '" . addslashes($employee->lastName) . "', firstName = '" . addslashes($employee->firstName) . "', birthDate = '$employee->birthDate', 
+                  address = '" . addslashes($employee->address) . "', postCode = '" . addslashes($employee->postCode) . "', location = '" . addslashes($employee->location) . "', avs = '$employee->avs', 
+                  phone = '" . addslashes($employee->phone) . "', email = '$employee->email', currentTitle = '" . addslashes($employee->currentTitle) . "', comingToOfficeDate = '$employee->comingToOfficeDate', 
+                  currentHourlyWage = '" . addslashes($employee->currentHourlyWage) . "', picture = '$employee->picture',cv = '$employee->cv', criminalRecord = '$employee->criminalRecord' WHERE employee.pk_employee = $employee->pk_employee";
         if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
@@ -282,7 +282,7 @@ class WrkEmployee
             if ($updatedFormation->pk_formation == null) {
                 //if there's new formations (insert)
                 $sql = "INSERT INTO formation (pk_formation, formativeOrganization, fk_formationType, EAScope, fromDate, toDate, attachement, fk_employee) 
-                      VALUES (NULL, '$updatedFormation->formativeOrganization', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
+                      VALUES (NULL, '" . addslashes($updatedFormation->formativeOrganization) . "', '$updatedFormation->fk_formationType', '$updatedFormation->EAScope', 
                       '$updatedFormation->fromDate', '$updatedFormation->toDate', '$updatedFormation->attachement', '$updatedFormation->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New formation « $updatedFormation->formativeOrganization » added \n";
@@ -291,7 +291,7 @@ class WrkEmployee
                 }
             } else {
                 //if formation already exist (update)
-                $sql = "UPDATE formation SET formativeOrganization = '$updatedFormation->formativeOrganization', 
+                $sql = "UPDATE formation SET formativeOrganization = '" . addslashes($updatedFormation->formativeOrganization) . "', 
                           fk_formationType = '$updatedFormation->fk_formationType', EAScope = '$updatedFormation->EAScope', 
                           fromDate = '$updatedFormation->fromDate', toDate = '$updatedFormation->toDate', 
                           attachement = '$updatedFormation->attachement' WHERE formation.pk_formation = $updatedFormation->pk_formation";
@@ -366,7 +366,7 @@ class WrkEmployee
             if ($updatedProfExp->pk_professionnalExperience == null || $updatedProfExp->pk_professionnalExperience == "0") {
                 //if there's new profexp (insiert)
                 $sql = "INSERT INTO professionnalexperience (pk_professionnalExperience, organizationName, organizationActivity, fonction, EAScope, fromDate, toDate, attachement, fk_employee) 
-                      VALUES (NULL, '$updatedProfExp->organizationName', '$updatedProfExp->organizationActivity', '$updatedProfExp->fonction', 
+                      VALUES (NULL, '". addslashes($updatedProfExp->organizationName) . "', '" . addslashes($updatedProfExp->organizationActivity) . "', '" . addslashes($updatedProfExp->fonction) . "', 
                       '$updatedProfExp->EAScope', '$updatedProfExp->fromDate', '$updatedProfExp->toDate', '$updatedProfExp->attachement', '$updatedProfExp->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New professionnal experience « $updatedProfExp->organizationName » added \n";
@@ -376,7 +376,7 @@ class WrkEmployee
             } else {
                 //if profexp already exist (update)
                 $sql = "UPDATE professionnalexperience SET organizationName = '$updatedProfExp->organizationName', 
-                          organizationActivity = '$updatedProfExp->organizationActivity', fonction = '$updatedProfExp->fonction', 
+                          organizationActivity = '" . addslashes($updatedProfExp->organizationActivity) . "', fonction = '" . addslashes($updatedProfExp->fonction) . "', 
                           EAScope = '$updatedProfExp->EAScope', fromDate = '$updatedProfExp->fromDate', 
                           toDate = '$updatedProfExp->toDate', attachement = '$updatedProfExp->attachement' WHERE professionnalexperience.pk_professionnalExperience = $updatedProfExp->pk_professionnalExperience";
                 if ($this->connection->query($sql)) {
@@ -450,8 +450,8 @@ class WrkEmployee
             if ($updatedConExp->pk_consultingExperience == null || $updatedConExp->pk_consultingExperience == "0") {
                 //if there's new conexp (insiert)
                 $sql = "INSERT INTO consultingexperience (pk_consultingExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, organization, year, fk_employee) 
-                      VALUES (NULL, '$updatedConExp->organizationName', '$updatedConExp->organizationActivity', '$updatedConExp->fk_NMSStandard', 
-                      '$updatedConExp->EAScope', '$updatedConExp->organization', '$updatedConExp->year', '$updatedConExp->fk_employee')";
+                      VALUES (NULL, '" . addslashes($updatedConExp->organizationName) . "', '" . addslashes($updatedConExp->organizationActivity) . "', '$updatedConExp->fk_NMSStandard', 
+                      '$updatedConExp->EAScope', '" . addslashes($updatedConExp->organization) . "', '$updatedConExp->year', '$updatedConExp->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New consulting experience « $updatedConExp->organizationName » added \n";
                 } else {
@@ -459,9 +459,9 @@ class WrkEmployee
                 }
             } else {
                 //if conexp already exist (update)
-                $sql = "UPDATE consultingexperience SET organizationName = '$updatedConExp->organizationName', 
-                          organizationActivity = '$updatedConExp->organizationActivity', fk_NMSStandard = '$updatedConExp->fk_NMSStandard', 
-                          EAScope = '$updatedConExp->EAScope', organization = '$updatedConExp->organization', 
+                $sql = "UPDATE consultingexperience SET organizationName = '" . addslashes($updatedConExp->organizationName) . "', 
+                          organizationActivity = '" . addslashes($updatedConExp->organizationActivity) . "', fk_NMSStandard = '$updatedConExp->fk_NMSStandard', 
+                          EAScope = '$updatedConExp->EAScope', organization = '" . addslashes($updatedConExp->organization) . "', 
                           year = '$updatedConExp->year' WHERE consultingexperience.pk_consultingExperience = $updatedConExp->pk_consultingExperience";
                 if ($this->connection->query($sql)) {
                     $message .= "Consulting experience with pk $updatedConExp->pk_consultingExperience updated \n";
@@ -533,8 +533,8 @@ class WrkEmployee
             if ($updatedAuditExp->pk_auditExperience == null || $updatedAuditExp->pk_auditExperience == "0") {
                 //if there's new auditexp (insiert)
                 $sql = "INSERT INTO auditexperience (pk_auditExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, oc, year, fk_employee) 
-                      VALUES (NULL, '$updatedAuditExp->organizationName', '$updatedAuditExp->organizationActivity', '$updatedAuditExp->fk_NMSStandard', 
-                      '$updatedAuditExp->EAScope', '$updatedAuditExp->oc', '$updatedAuditExp->year', '$updatedAuditExp->fk_employee')";
+                      VALUES (NULL, '" . addslashes($updatedAuditExp->organizationName) . "', '" . addslashes($updatedAuditExp->organizationActivity) . "', '$updatedAuditExp->fk_NMSStandard', 
+                      '$updatedAuditExp->EAScope', '" . addslashes($updatedAuditExp->oc) . "', '$updatedAuditExp->year', '$updatedAuditExp->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New audit experience « $updatedAuditExp->organizationName » added \n";
                 } else {
@@ -542,9 +542,9 @@ class WrkEmployee
                 }
             } else {
                 //if auditexp already exist (update)
-                $sql = "UPDATE auditexperience SET organizationName = '$updatedAuditExp->organizationName', 
-                          organizationActivity = '$updatedAuditExp->organizationActivity', fk_NMSStandard = '$updatedAuditExp->fk_NMSStandard', 
-                          EAScope = '$updatedAuditExp->EAScope', oc = '$updatedAuditExp->oc', 
+                $sql = "UPDATE auditexperience SET organizationName = '" . addslashes($updatedAuditExp->organizationName) . "', 
+                          organizationActivity = '" . addslashes($updatedAuditExp->organizationActivity) . "', fk_NMSStandard = '$updatedAuditExp->fk_NMSStandard', 
+                          EAScope = '$updatedAuditExp->EAScope', oc = '" . addslashes($updatedAuditExp->oc) . "', 
                           year = '$updatedAuditExp->year' WHERE auditexperience.pk_auditExperience = $updatedAuditExp->pk_auditExperience";
                 if ($this->connection->query($sql)) {
                     $message .= "Audit experience with pk $updatedAuditExp->pk_auditExperience updated \n";
@@ -616,8 +616,8 @@ class WrkEmployee
             if ($updatedAuditObs->pk_auditObservation == null || $updatedAuditObs->pk_auditObservation == "0") {
                 //if there's new auditobs (insiert)
                 $sql = "INSERT INTO auditobservation (pk_auditObservation, organization, observer, attachement, EAScope, comment, date, fk_employee) 
-                      VALUES (NULL, '$updatedAuditObs->organization', '$updatedAuditObs->observer', '$updatedAuditObs->attachement', 
-                      '$updatedAuditObs->EAScope', '$updatedAuditObs->comment', '$updatedAuditObs->date', '$updatedAuditObs->fk_employee')";
+                      VALUES (NULL, '" . addslashes($updatedAuditObs->organization) . "', '" . addslashes($updatedAuditObs->observer) . "', '$updatedAuditObs->attachement', 
+                      '$updatedAuditObs->EAScope', '" . addslashes($updatedAuditObs->comment) . "', '$updatedAuditObs->date', '$updatedAuditObs->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New audit observation « $updatedAuditObs->organization » added \n";
                 } else {
@@ -625,8 +625,8 @@ class WrkEmployee
                 }
             } else {
                 //if auditobs already exist (update)
-                $sql = "UPDATE auditobservation SET organization = '$updatedAuditObs->organization', observer = '$updatedAuditObs->observer', 
-                      attachement = '$updatedAuditObs->attachement', comment = '$updatedAuditObs->comment', date = '$updatedAuditObs->date' 
+                $sql = "UPDATE auditobservation SET organization = '" . addslashes($updatedAuditObs->organization) . "', observer = '" . addslashes($updatedAuditObs->observer) . "', 
+                      attachement = '$updatedAuditObs->attachement', comment = '" . addslashes($updatedAuditObs->comment) . "', date = '$updatedAuditObs->date' 
                       WHERE auditobservation.pk_auditObservation = $updatedAuditObs->pk_auditObservation";
                 if ($this->connection->query($sql)) {
                     $message .= "Audit experience with pk $updatedAuditObs->pk_auditObservation updated \n";
@@ -697,8 +697,8 @@ class WrkEmployee
             if ($updatedMandateSheet->pk_mandateSheet == null || $updatedMandateSheet->pk_mandateSheet == "0") {
                 //if there's new mandate sheet (insert)
                 $sql = "INSERT INTO mandatesheet (pk_mandateSheet, organization, EAScope, date, fees, attachement, fk_employee) 
-                      VALUES (NULL, '$updatedMandateSheet->organization', '$updatedMandateSheet->EAScope', '$updatedMandateSheet->date', 
-                      '$updatedMandateSheet->fees', '$updatedMandateSheet->attachement', '$updatedMandateSheet->fk_employee')";
+                      VALUES (NULL, '" . addslashes($updatedMandateSheet->organization) . "', '$updatedMandateSheet->EAScope', '$updatedMandateSheet->date', 
+                      '" . addslashes($updatedMandateSheet->fees) . "', '$updatedMandateSheet->attachement', '$updatedMandateSheet->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New mandate sheet « $updatedMandateSheet->organization » added \n";
                 } else {
@@ -706,8 +706,8 @@ class WrkEmployee
                 }
             } else {
                 //if mandate sheet already exist (update)
-                $sql = "UPDATE mandatesheet SET organization = '$updatedMandateSheet->organization', EAScope = '$updatedMandateSheet->EAScope', 
-                      date = '$updatedMandateSheet->date', fees = '$updatedMandateSheet->fees', attachement = '$updatedMandateSheet->attachement' 
+                $sql = "UPDATE mandatesheet SET organization = '" . addslashes($updatedMandateSheet->organization) . "', EAScope = '$updatedMandateSheet->EAScope', 
+                      date = '$updatedMandateSheet->date', fees = '" . addslashes($updatedMandateSheet->fees) . "', attachement = '$updatedMandateSheet->attachement' 
                       WHERE mandatesheet.pk_mandateSheet = $updatedMandateSheet->pk_mandateSheet";
                 if ($this->connection->query($sql)) {
                     $message .= "Mandate sheet with pk $updatedMandateSheet->pk_mandateSheet updated \n";
@@ -778,7 +778,7 @@ class WrkEmployee
             if ($updatedObjective->pk_objective == null || $updatedObjective->pk_objective == "0") {
                 //if there's new objective (insert)
                 $sql = "INSERT INTO objective (pk_objective, mediumLongTermObjectives, auditorStrategy, date, validate, fk_employee) 
-                      VALUES (NULL, '$updatedObjective->mediumLongTermObjectives', '$updatedObjective->auditorStrategy', '$updatedObjective->date', 
+                      VALUES (NULL, '" . addslashes($updatedObjective->mediumLongTermObjectives) . "', '" . addslashes($updatedObjective->auditorStrategy) . "', '$updatedObjective->date', 
                       '$updatedObjective->validate', '$updatedObjective->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New objective « $updatedObjective->mediumLongTermObjectives » added \n";
@@ -787,8 +787,8 @@ class WrkEmployee
                 }
             } else {
                 //if objective already exist (update)
-                $sql = "UPDATE objective SET mediumLongTermObjectives = '$updatedObjective->mediumLongTermObjectives', 
-                      auditorStrategy = '$updatedObjective->auditorStrategy', date = '$updatedObjective->date', 
+                $sql = "UPDATE objective SET mediumLongTermObjectives = '" . addslashes($updatedObjective->mediumLongTermObjectives) . "', 
+                      auditorStrategy = '" . addslashes($updatedObjective->auditorStrategy) . "', date = '$updatedObjective->date', 
                       validate = '$updatedObjective->validate' WHERE objective.pk_objective = $updatedObjective->pk_objective";
                 if ($this->connection->query($sql)) {
                     $message .= "Objective with pk $updatedObjective->pk_objective updated \n";

@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="988f5d07-0611-4861-9044-f9b9ae71f7a2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wrks/wrk.php" afterPath="$PROJECT_DIR$/wrks/wrk.php" />
+      <change beforePath="$PROJECT_DIR$/wrks/wrk_employee.php" afterPath="$PROJECT_DIR$/wrks/wrk_employee.php" />
+      <change beforePath="$PROJECT_DIR$/wrks/wrk_formation_type.php" afterPath="$PROJECT_DIR$/wrks/wrk_formation_type.php" />
+      <change beforePath="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" afterPath="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ctrl.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ctrl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="817">
+              <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -43,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -52,9 +54,10 @@
       <file leaf-file-name="wrk_employee.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="1026">
+              <caret line="759" column="97" lean-forward="false" selection-start-line="759" selection-start-column="97" selection-end-line="759" selection-end-column="97" />
               <folding>
+                <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -63,6 +66,7 @@
                 <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+                <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -86,16 +90,124 @@
                 <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
                 <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-                <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-                <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-                <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-                <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-                <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-                <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-                <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-                <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-                <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-                <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+                <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+                <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+                <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+                <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+                <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+                <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+                <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+                <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+                <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+                <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+                <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+                <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+                <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+                <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+                <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+                <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+                <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+                <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+                <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+                <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+                <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+                <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+                <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+                <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+                <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+                <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+                <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+                <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+                <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+                <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+                <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+                <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+                <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+                <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+                <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+                <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+                <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+                <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+                <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+                <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+                <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+                <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+                <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+                <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+                <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,18 +234,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrk_internal_qualification.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wrk_internal_qualification.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1235">
-              <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+            <state relative-caret-position="513">
+              <caret line="66" column="56" lean-forward="false" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
               <folding>
-                <marker date="1505127788000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
-                <marker date="1505127788000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1505127788000" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1505127788000" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1505127788000" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
-                <marker date="1505127788000" expanded="true" signature="3591:3956" ph="UPDATE inter... " />
+                <element signature="n#get_internal_qualification_list#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+                <element signature="n#add_default_internal_qualification#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+                <marker date="1521647093618" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
+                <marker date="1521647093618" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
+                <marker date="1521647093618" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
+                <marker date="1521647093618" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
+                <marker date="1521647093618" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
+                <marker date="1521647093618" expanded="true" signature="3591:3677" ph="UPDATE internalqualification_employee... " />
+                <marker date="1521647093618" expanded="true" signature="3591:3739" ph="UPDATE internalqualification_employee... " />
+                <marker date="1521647093618" expanded="true" signature="3591:3976" ph="UPDATE inter... " />
               </folding>
             </state>
           </provider>
@@ -142,8 +258,8 @@
       <file leaf-file-name="wrk_nmsstandard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_nmsstandard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
+            <state relative-caret-position="76">
+              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding>
                 <marker date="1499864975000" expanded="true" signature="480:505" ph="SELECT * FRO... nmsstandard" />
               </folding>
@@ -154,10 +270,10 @@
       <file leaf-file-name="wrk_formation_type.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_formation_type.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+            <state relative-caret-position="513">
+              <caret line="27" column="2" lean-forward="true" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
               <folding>
-                <marker date="1499864672000" expanded="true" signature="486:513" ph="SELECT * FRO... formationType" />
+                <marker date="1519048193494" expanded="true" signature="486:515" ph="SELECT * FRO... formationType" />
               </folding>
             </state>
           </provider>
@@ -219,17 +335,17 @@
         <option value="$PROJECT_DIR$/beans/db_connection.php" />
         <option value="$PROJECT_DIR$/wrks/test.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_formation.php" />
-        <option value="$PROJECT_DIR$/wrks/wrk_formation_type.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_nmsstandard.php" />
         <option value="$PROJECT_DIR$/ctrl/test_post.php" />
         <option value="$PROJECT_DIR$/attachements/todo_hrm_edelcert.txt" />
         <option value="$PROJECT_DIR$/ctrl/test.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_login.php" />
         <option value="$PROJECT_DIR$/ctrl/ctrl.php" />
-        <option value="$PROJECT_DIR$/wrks/wrk_employee.php" />
         <option value="$PROJECT_DIR$/wrks/wrk.php" />
+        <option value="$PROJECT_DIR$/wrks/wrk_formation_type.php" />
+        <option value="$PROJECT_DIR$/wrks/wrk_employee.php" />
+        <option value="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" />
       </list>
     </option>
   </component>
@@ -241,10 +357,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="205" />
-    <option name="y" value="102" />
-    <option name="width" value="1440" />
-    <option name="height" value="878" />
+    <option name="y" value="22" />
+    <option name="width" value="1920" />
+    <option name="height" value="1058" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -261,7 +376,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,6 +403,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,12 +566,16 @@
       <workItem from="1518092972373" duration="1488000" />
       <workItem from="1518102396224" duration="278000" />
       <workItem from="1518699455229" duration="9528000" />
-      <workItem from="1518776338431" duration="682000" />
+      <workItem from="1518776338431" duration="1096000" />
+      <workItem from="1519047655185" duration="688000" />
+      <workItem from="1520234874948" duration="9000" />
+      <workItem from="1521638385081" duration="65000" />
+      <workItem from="1521638477001" duration="5521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162061000" />
+    <option name="totallyTimeSpent" value="168758000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,7 +590,7 @@
     <frame x="0" y="22" width="1920" height="1058" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -509,6 +628,7 @@
         <state relative-caret-position="3971">
           <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
           <folding>
+            <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -517,6 +637,7 @@
             <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+            <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -540,16 +661,124 @@
             <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-            <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+            <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+            <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+            <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+            <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+            <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+            <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
           </folding>
         </state>
       </provider>
@@ -569,7 +798,7 @@
         <state relative-caret-position="380">
           <caret line="20" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
           <folding>
-            <marker date="1499864672000" expanded="true" signature="486:513" ph="SELECT * FRO... formationType" />
+            <marker date="1519048193494" expanded="true" signature="486:515" ph="SELECT * FRO... formationType" />
           </folding>
         </state>
       </provider>
@@ -604,12 +833,16 @@
         <state relative-caret-position="380">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <marker date="1505127788000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
-            <marker date="1505127788000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3956" ph="UPDATE inter... " />
+            <element signature="n#get_internal_qualification_list#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <element signature="n#add_default_internal_qualification#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <marker date="1521647093618" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
+            <marker date="1521647093618" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3677" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3739" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3976" ph="UPDATE inter... " />
           </folding>
         </state>
       </provider>
@@ -619,6 +852,7 @@
         <state relative-caret-position="3971">
           <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
           <folding>
+            <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -627,6 +861,7 @@
             <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+            <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -650,16 +885,124 @@
             <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-            <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+            <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+            <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+            <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+            <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+            <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+            <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
           </folding>
         </state>
       </provider>
@@ -679,7 +1022,7 @@
         <state relative-caret-position="380">
           <caret line="20" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
           <folding>
-            <marker date="1499864672000" expanded="true" signature="486:513" ph="SELECT * FRO... formationType" />
+            <marker date="1519048193494" expanded="true" signature="486:515" ph="SELECT * FRO... formationType" />
           </folding>
         </state>
       </provider>
@@ -713,12 +1056,16 @@
         <state relative-caret-position="380">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <marker date="1505127788000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
-            <marker date="1505127788000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3956" ph="UPDATE inter... " />
+            <element signature="n#get_internal_qualification_list#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <element signature="n#add_default_internal_qualification#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <marker date="1521647093618" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
+            <marker date="1521647093618" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3677" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3739" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3976" ph="UPDATE inter... " />
           </folding>
         </state>
       </provider>
@@ -728,6 +1075,7 @@
         <state relative-caret-position="646">
           <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
           <folding>
+            <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -736,6 +1084,7 @@
             <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+            <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -759,16 +1108,124 @@
             <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-            <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+            <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+            <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+            <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+            <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+            <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+            <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
           </folding>
         </state>
       </provider>
@@ -788,7 +1245,7 @@
         <state relative-caret-position="380">
           <caret line="20" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
           <folding>
-            <marker date="1499864672000" expanded="true" signature="486:513" ph="SELECT * FRO... formationType" />
+            <marker date="1519048193494" expanded="true" signature="486:515" ph="SELECT * FRO... formationType" />
           </folding>
         </state>
       </provider>
@@ -814,12 +1271,16 @@
         <state relative-caret-position="380">
           <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding>
-            <marker date="1505127788000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
-            <marker date="1505127788000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3956" ph="UPDATE inter... " />
+            <element signature="n#get_internal_qualification_list#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <element signature="n#add_default_internal_qualification#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <marker date="1521647093618" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
+            <marker date="1521647093618" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3677" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3739" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3976" ph="UPDATE inter... " />
           </folding>
         </state>
       </provider>
@@ -829,6 +1290,7 @@
         <state relative-caret-position="3040">
           <caret line="160" column="28" lean-forward="false" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
           <folding>
+            <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -837,6 +1299,7 @@
             <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+            <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -860,16 +1323,124 @@
             <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-            <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+            <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+            <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+            <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+            <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+            <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+            <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
           </folding>
         </state>
       </provider>
@@ -889,7 +1460,7 @@
         <state relative-caret-position="380">
           <caret line="20" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
           <folding>
-            <marker date="1499864672000" expanded="true" signature="486:513" ph="SELECT * FRO... formationType" />
+            <marker date="1519048193494" expanded="true" signature="486:515" ph="SELECT * FRO... formationType" />
           </folding>
         </state>
       </provider>
@@ -923,6 +1494,7 @@
         <state relative-caret-position="19">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
+            <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -931,6 +1503,7 @@
             <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+            <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -954,16 +1527,124 @@
             <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-            <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+            <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+            <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+            <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+            <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+            <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+            <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1034,31 +1715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk_nmsstandard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
-          <folding>
-            <marker date="1499864975000" expanded="true" signature="480:505" ph="SELECT * FRO... nmsstandard" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1235">
-          <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
-          <folding>
-            <marker date="1505127788000" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
-            <marker date="1505127788000" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
-            <marker date="1505127788000" expanded="true" signature="3591:3956" ph="UPDATE inter... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctrl/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1086,21 +1742,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk_formation_type.php">
+    <entry file="file://$PROJECT_DIR$/beans/db_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        <state relative-caret-position="38">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrks/wrk_nmsstandard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding>
-            <marker date="1499864672000" expanded="true" signature="486:513" ph="SELECT * FRO... formationType" />
+            <marker date="1499864975000" expanded="true" signature="480:505" ph="SELECT * FRO... nmsstandard" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="1026">
+          <caret line="759" column="97" lean-forward="false" selection-start-line="759" selection-start-column="97" selection-end-line="759" selection-end-column="97" />
           <folding>
+            <element signature="n#get_employees_list#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_formation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_professionnalexperience#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -1109,6 +1790,7 @@
             <element signature="n#get_employee_auditobservation#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_objective#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#get_employee_mandatesheet#0;n#WrkEmployee#0;n#!!top" expanded="false" />
+            <element signature="n#add_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#delete_employee#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_admin#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#update_employee_formations#0;n#WrkEmployee#0;n#!!top" expanded="false" />
@@ -1132,41 +1814,154 @@
             <element signature="n#checkUsername#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" expanded="false" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" expanded="false" />
-            <marker date="1518724350762" expanded="true" signature="489:570" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:577" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:588" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
-            <marker date="1518724350762" expanded="true" signature="8928:9265" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9288" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9291" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9308" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9337" ph="INSERT INTO employee... " />
-            <marker date="1518724350762" expanded="true" signature="8928:9747" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="489:592" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="1412:1626" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="2456:2500" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="3314:3372" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="4183:4238" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="5044:5094" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="5901:5952" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="6752:6796" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="7778:7825" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="8928:9807" ph="INSERT INTO employee... " />
+            <marker date="1521646752611" expanded="true" signature="10608:10658" ph="DELETE FROM employee... " />
+            <marker date="1521646752611" expanded="true" signature="11334:12132" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="12857:12911" ph="SELECT * FRO... formation" />
+            <marker date="1521646752611" expanded="true" signature="13375:13826" ph="INSERT INTO formation... " />
+            <marker date="1521646752611" expanded="true" signature="14244:14690" ph="UPDATE formation... " />
+            <marker date="1521646752611" expanded="true" signature="15552:15605" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="16537:16589" ph="DELETE FROM formation... " />
+            <marker date="1521646752611" expanded="true" signature="17462:17544" ph="SELECT * FRO... professionnalexperience" />
+            <marker date="1521646752611" expanded="true" signature="18110:18651" ph="INSERT INTO professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="19083:19617" ph="UPDATE professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="20664:20759" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="21819:21899" ph="DELETE FROM professionnalexperience... " />
+            <marker date="1521646752611" expanded="true" signature="22797:22873" ph="SELECT * FRO... consultingexperience" />
+            <marker date="1521646752611" expanded="true" signature="23422:23617" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23669" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23671" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23673" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23729" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23731" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23817" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23867" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="23422:23922" ph="INSERT INTO consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24397" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24449" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24501" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24503" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24559" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24578" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24693" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24741" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24777" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="24345:24854" ph="UPDATE consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="25853:25939" ph="DELETE FROM consultingexperience... " />
+            <marker date="1521646752611" expanded="true" signature="27928:27994" ph="SELECT * FRO... auditexperience" />
+            <marker date="1521646752611" expanded="true" signature="28526:28701" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28755" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28757" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28759" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28817" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28819" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28909" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:28951" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="28526:29010" ph="INSERT INTO auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29476" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29530" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29582" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29584" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29642" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29661" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="29429:29915" ph="UPDATE auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="30856:30927" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="31915:31979" ph="DELETE FROM auditexperience... " />
+            <marker date="1521646752611" expanded="true" signature="32853:32921" ph="SELECT * FRO... auditobservation" />
+            <marker date="1521646752611" expanded="true" signature="33458:33621" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33671" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33673" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33675" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33721" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33723" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33810" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33857" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="33458:33916" ph="INSERT INTO auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34373" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34423" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34436" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34438" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34454" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34484" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34523" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="34329:34716" ph="UPDATE auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="35515:35589" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="36586:36652" ph="DELETE FROM auditobservation... " />
+            <marker date="1521646752611" expanded="true" signature="37520:37580" ph="SELECT * FRO... mandatesheet" />
+            <marker date="1521646752611" expanded="true" signature="38113:38255" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38308" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38309" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38311" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38399" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38447" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38113:38521" ph="INSERT INTO mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:38979" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39033" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39045" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39147" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="38939:39306" ph="UPDATE mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="40083:40145" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="41106:41164" ph="DELETE FROM mandatesheet... " />
+            <marker date="1521646752611" expanded="true" signature="42016:42070" ph="SELECT * FRO... objective" />
+            <marker date="1521646752611" expanded="true" signature="42575:42722" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42785" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42787" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42789" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42843" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42845" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="42575:42960" ph="INSERT INTO objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43433" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43539" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="43384:43727" ph="UPDATE objective... " />
+            <marker date="1521646752611" expanded="true" signature="44454:44507" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="45439:45491" ph="DELETE FROM objective... " />
+            <marker date="1521646752611" expanded="true" signature="46260:46321" ph="SELECT pk_em... employee" />
+            <marker date="1521646752611" expanded="true" signature="47079:47186" ph="SELECT * FRO... employee" />
+            <marker date="1521646752611" expanded="true" signature="47310:47395" ph="UPDATE employee... " />
+            <marker date="1521646752611" expanded="true" signature="48113:48162" ph="SELECT isAdm... employee" />
+            <marker date="1521646752611" expanded="true" signature="49088:49117" ph="SELECT usern... employee" />
+            <marker date="1521646752611" expanded="true" signature="50193:51081" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50208:50273" ph="..." />
+            <marker date="1521646752611" expanded="true" signature="50288:51065" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beans/db_connection.php">
+    <entry file="file://$PROJECT_DIR$/wrks/wrk_formation_type.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="513">
+          <caret line="27" column="2" lean-forward="true" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+          <folding>
+            <marker date="1519048193494" expanded="true" signature="486:515" ph="SELECT * FRO... formationType" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
+    <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="513">
+          <caret line="66" column="56" lean-forward="false" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+          <folding>
+            <element signature="n#get_internal_qualification_list#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <element signature="n#add_default_internal_qualification#0;n#WrkInternalQualification#0;n#!!top" expanded="false" />
+            <marker date="1521647093618" expanded="true" signature="512:1038" ph="SELECT * FRO... internalqualification" />
+            <marker date="1521647093618" expanded="true" signature="2044:2185" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2207" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="2044:2644" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3592" ph="UPDATE inter... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3677" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3739" ph="UPDATE internalqualification_employee... " />
+            <marker date="1521647093618" expanded="true" signature="3591:3976" ph="UPDATE inter... " />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -11,7 +11,7 @@ class WrkFormationType
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM formationType";
+        $sql = "SELECT * FROM `formationtype`";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {

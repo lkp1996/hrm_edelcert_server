@@ -62,7 +62,7 @@ class WrkInternalQualification
             }else{
                 $updatedIntQual->yesno = 1;
             }
-            $sql = "UPDATE internalqualification_employee SET yesno = '$updatedIntQual->yesno', result = '$updatedIntQual->result', validationDate = '$updatedIntQual->validationDate', attachement = '$updatedIntQual->attachement' WHERE internalqualification_employee.fk_internalQualification = $updatedIntQual->pk_internalQualifications AND internalqualification_employee.fk_employee = $updatedIntQual->fk_employee";
+            $sql = "UPDATE internalqualification_employee SET yesno = '$updatedIntQual->yesno', result = '" . addslashes($updatedIntQual->result) . "', validationDate = '$updatedIntQual->validationDate', attachement = '$updatedIntQual->attachement' WHERE internalqualification_employee.fk_internalQualification = $updatedIntQual->pk_internalQualifications AND internalqualification_employee.fk_employee = $updatedIntQual->fk_employee";
             if ($this->connection->query($sql)) {
                 $message .= "Internal qualification_employee with pk $updatedIntQual->pk_internalQualifications updated \n";
             } else {
