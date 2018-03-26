@@ -200,7 +200,7 @@ class WrkEmployee
         $username = $employee->firstName . $employee->lastName;
         $password = $this->generate_password();
         $isAdmin = 0;
-        if($employee->role == "admin"){
+        if ($employee->role == "admin") {
             $isAdmin = 1;
         }
 
@@ -366,7 +366,7 @@ class WrkEmployee
             if ($updatedProfExp->pk_professionnalExperience == null || $updatedProfExp->pk_professionnalExperience == "0") {
                 //if there's new profexp (insiert)
                 $sql = "INSERT INTO professionnalexperience (pk_professionnalExperience, organizationName, organizationActivity, fonction, EAScope, fromDate, toDate, attachement, fk_employee) 
-                      VALUES (NULL, '". addslashes($updatedProfExp->organizationName) . "', '" . addslashes($updatedProfExp->organizationActivity) . "', '" . addslashes($updatedProfExp->fonction) . "', 
+                      VALUES (NULL, '" . addslashes($updatedProfExp->organizationName) . "', '" . addslashes($updatedProfExp->organizationActivity) . "', '" . addslashes($updatedProfExp->fonction) . "', 
                       '$updatedProfExp->EAScope', '$updatedProfExp->fromDate', '$updatedProfExp->toDate', '$updatedProfExp->attachement', '$updatedProfExp->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New professionnal experience « $updatedProfExp->organizationName » added \n";
@@ -531,10 +531,10 @@ class WrkEmployee
 
         foreach ($employee_auditExperiences as $updatedAuditExp) {
             if ($updatedAuditExp->pk_auditExperience == null || $updatedAuditExp->pk_auditExperience == "0") {
-                //if there's new auditexp (insiert)
-                $sql = "INSERT INTO auditexperience (pk_auditExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, oc, year, fk_employee) 
+                //if there's new auditexp (insert)
+                $sql = "INSERT INTO auditexperience (pk_auditExperience, organizationName, organizationActivity, fk_NMSStandard, EAScope, oc, year, fees, mandatesheet, fk_employee) 
                       VALUES (NULL, '" . addslashes($updatedAuditExp->organizationName) . "', '" . addslashes($updatedAuditExp->organizationActivity) . "', '$updatedAuditExp->fk_NMSStandard', 
-                      '$updatedAuditExp->EAScope', '" . addslashes($updatedAuditExp->oc) . "', '$updatedAuditExp->year', '$updatedAuditExp->fk_employee')";
+                      '$updatedAuditExp->EAScope', '" . addslashes($updatedAuditExp->oc) . "', '$updatedAuditExp->year', '$updatedAuditExp->fees', '$updatedAuditExp->mandatesheet', '$updatedAuditExp->fk_employee')";
                 if ($this->connection->query($sql)) {
                     $message .= "New audit experience « $updatedAuditExp->organizationName » added \n";
                 } else {
@@ -545,7 +545,7 @@ class WrkEmployee
                 $sql = "UPDATE auditexperience SET organizationName = '" . addslashes($updatedAuditExp->organizationName) . "', 
                           organizationActivity = '" . addslashes($updatedAuditExp->organizationActivity) . "', fk_NMSStandard = '$updatedAuditExp->fk_NMSStandard', 
                           EAScope = '$updatedAuditExp->EAScope', oc = '" . addslashes($updatedAuditExp->oc) . "', 
-                          year = '$updatedAuditExp->year' WHERE auditexperience.pk_auditExperience = $updatedAuditExp->pk_auditExperience";
+                          year = '$updatedAuditExp->year', fees = '$updatedAuditExp->fees', mandatesheet = '$updatedAuditExp->mandatesheet' WHERE auditexperience.pk_auditExperience = $updatedAuditExp->pk_auditExperience";
                 if ($this->connection->query($sql)) {
                     $message .= "Audit experience with pk $updatedAuditExp->pk_auditExperience updated \n";
                 } else {
