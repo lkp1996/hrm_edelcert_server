@@ -11,7 +11,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT pk_employee, lastName, firstName, phone, email, currentTitle FROM employee WHERE pk_employee != $pk_employee";
+        $sql = "SELECT pk_employee, lastName, firstName, phone, email, currentTitle FROM employee WHERE pk_employee != $pk_employee ORDER BY lastName";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
