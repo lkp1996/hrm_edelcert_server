@@ -36,7 +36,12 @@ class WrkInternalQualification
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "INSERT INTO internalqualification_employee (fk_internalQualification, fk_employee, yesno, result, validationDate, attachement) VALUES ('1', '" . $pk_employee . "', '0', '', NULL, NULL), ('2', '" . $pk_employee . "', '0', '', NULL, NULL), ('3', '" . $pk_employee . "', '0', '', NULL, NULL), ('4', '" . $pk_employee . "', '0', '', NULL, NULL), ('5', '" . $pk_employee . "', '0', '', NULL, NULL), ('6', '" . $pk_employee . "', '0', '', NULL, NULL), ('7', '" . $pk_employee . "', '0', '', NULL, NULL), ('8', '" . $pk_employee . "', '0', '', NULL, NULL), ('9', '" . $pk_employee . "', '0', '', NULL, NULL)";
+        $sql = "INSERT INTO internalqualification_employee (fk_internalQualification, fk_employee, yesno, result, validationDate, attachement) VALUES ('1', '" . $pk_employee . "', '0', '', NULL, NULL), 
+                ('2', '" . $pk_employee . "', '0', '', NULL, NULL), ('3', '" . $pk_employee . "', '0', '', NULL, NULL), ('4', '" . $pk_employee . "', '0', '', NULL, NULL), ('5', '" . $pk_employee . "', '0', '', NULL, NULL), 
+                ('6', '" . $pk_employee . "', '0', '', NULL, NULL), ('7', '" . $pk_employee . "', '0', '', NULL, NULL), ('8', '" . $pk_employee . "', '0', '', NULL, NULL), ('9', '" . $pk_employee . "', '0', '', NULL, NULL), 
+                ('10', '" . $pk_employee . "', '0', '', NULL, NULL), ('11', '" . $pk_employee . "', '0', '', NULL, NULL), ('12', '" . $pk_employee . "', '0', '', NULL, NULL), ('13', '" . $pk_employee . "', '0', '', NULL, NULL), 
+                ('14', '" . $pk_employee . "', '0', '', NULL, NULL), ('15', '" . $pk_employee . "', '0', '', NULL, NULL), ('16', '" . $pk_employee . "', '0', '', NULL, NULL), ('17', '" . $pk_employee . "', '0', '', NULL, NULL), 
+                ('18', '" . $pk_employee . "', '0', '', NULL, NULL), ('19', '" . $pk_employee . "', '0', '', NULL, NULL), ('20', '" . $pk_employee . "', '0', '', NULL, NULL)";
         if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
