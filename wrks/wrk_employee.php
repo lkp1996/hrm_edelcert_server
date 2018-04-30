@@ -51,7 +51,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM formation WHERE fk_employee = " . $pk_employee;
+        $sql = "SELECT * FROM formation WHERE fk_employee = " . $pk_employee . " ORDER BY toDate DESC";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -71,7 +71,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM professionnalexperience WHERE fk_employee = " . $pk_employee;
+        $sql = "SELECT * FROM professionnalexperience WHERE fk_employee = " . $pk_employee . " ORDER BY toDate DESC";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -91,7 +91,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM consultingexperience WHERE fk_employee = " . $pk_employee;
+        $sql = "SELECT * FROM consultingexperience WHERE fk_employee = " . $pk_employee . " ORDER BY year DESC";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -111,7 +111,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM auditexperience WHERE fk_employee = " . $pk_employee;
+        $sql = "SELECT * FROM auditexperience WHERE fk_employee = " . $pk_employee . " ORDER BY year DESC";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -131,7 +131,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM auditobservation WHERE fk_employee = " . $pk_employee;
+        $sql = "SELECT * FROM auditobservation WHERE fk_employee = " . $pk_employee . " ORDER BY date DESC";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -151,7 +151,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM objective WHERE fk_employee = " . $pk_employee;
+        $sql = "SELECT * FROM objective WHERE fk_employee = " . $pk_employee . " ORDER BY date DESC";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
