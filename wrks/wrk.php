@@ -202,9 +202,14 @@ class Wrk
         return $this->wrk_employee->update_password($this->db_connection, $employee);
     }
 
-    public function is_admin($pk_employee)
+    public function get_employee_type($pk_employee)
     {
-        return $this->wrk_employee->is_admin($this->db_connection, $pk_employee);
+        return $this->wrk_employee->get_employee_type($this->db_connection, $pk_employee);
+    }
+
+    public function get_type_list()
+    {
+        return $this->wrk_employee->get_type_list($this->db_connection);
     }
 }
 

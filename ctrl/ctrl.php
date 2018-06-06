@@ -35,8 +35,10 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
 } else if (isset($_GET["getUserID"])) {
     echo $ctrl->get_userId($_GET["getUserID"]);
-} else if (isset($_GET["isAdmin"])) {
-    echo $ctrl->is_admin($_GET["isAdmin"]);
+} else if (isset($_GET["employeeType"])) {
+    echo $ctrl->get_employee_type($_GET["employeeType"]);
+} else if (isset($_GET["type_list"])) {
+    echo $ctrl->get_type_list();
 } else if ($json = json_decode(file_get_contents('php://input'))) {
     if ($json->username && $json->password) {
         echo $ctrl->login($json);
@@ -303,9 +305,14 @@ class Ctrl
         return $this->wrk->update_password($employee);
     }
 
-    public function is_admin($pk_employee)
+    public function get_employee_type($pk_employee)
     {
-        return $this->wrk->is_admin($pk_employee);
+        return $this->wrk->get_employee_type($pk_employee);
+    }
+
+    public function get_type_list()
+    {
+        return $this->wrk->get_type_list($this->db_connection);
     }
 }
 

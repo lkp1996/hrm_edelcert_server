@@ -200,12 +200,12 @@ class WrkEmployee
         $username = $employee->firstName . $employee->lastName;
         $password = $this->generate_password();
         $isAdmin = 0;
-        if ($employee->role == "admin") {
-            $isAdmin = 1;
-        }
+        //if ($employee->role == "admin") {
+        //    $isAdmin = 1;
+        //}
 
-        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, isAdmin, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
-            VALUES (NULL, '" . addslashes($employee->lastName) . "', '" . addslashes($employee->firstName) . "', '" . addslashes($username) . "', '" . md5($password) . "', '" . $isAdmin . "', '" . $employee->birthDate . "', '" . addslashes($employee->address) . "', '" . $employee->postCode . "', '"
+        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, fk_employeetype, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
+            VALUES (NULL, '" . addslashes($employee->lastName) . "', '" . addslashes($employee->firstName) . "', '" . addslashes($username) . "', '" . md5($password) . "', '" . $employee->fk_employeetype . "', '" . $employee->birthDate . "', '" . addslashes($employee->address) . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
             . "', '" . $employee->comingToOfficeDate . "', '" . addslashes($employee->currentHourlyWage) . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "')";
         if ($this->connection->query($sql)) {
@@ -881,22 +881,41 @@ class WrkEmployee
         return $message;
     }
 
-    public function is_admin(DBConnection $db_connection, $pk_employee)
+    public function get_employee_type(DBConnection $db_connection, $pk_employee)
     {
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
         mysqli_set_charset($this->connection, "utf8");
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT isAdmin FROM employee WHERE pk_employee = $pk_employee";
+        $sql = "SELECT employeetype.type FROM employeetype INNER JOIN employee ON employeetype.pk_employeetype = employee.fk_employeetype WHERE pk_employee = $pk_employee";
+        //$sql = "SELECT isAdmin FROM employee WHERE pk_employee = $pk_employee";
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $emparray = $row["isAdmin"];
+                $emparray = $row["type"];
             }
         }
         $this->connection->close();
         return $emparray;
+    }
+
+    public function get_type_list(DBConnection $db_connection)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if (!$this->connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT * FROM employeetype";
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray[] = $row;
+            }
+        }
+        $this->connection->close();
+        return json_encode($emparray);
     }
 
     public function create_dirs($pk_employee)
