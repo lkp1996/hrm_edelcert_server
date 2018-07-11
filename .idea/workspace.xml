@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="988f5d07-0611-4861-9044-f9b9ae71f7a2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrks/wrk_employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/wrks/wrk_employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl/ctrl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl/ctrl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrks/wrk.php" beforeDir="false" afterPath="$PROJECT_DIR$/wrks/wrk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" beforeDir="false" afterPath="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ctrl.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="247">
+              <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -41,16 +43,16 @@
       <file leaf-file-name="wrk.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+            <state relative-caret-position="296">
+              <caret line="165" column="91" selection-start-line="165" selection-start-column="91" selection-end-line="165" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrk_employee.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wrk_employee.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="247">
               <caret line="13" column="136" selection-start-line="13" selection-start-column="136" selection-end-line="13" selection-end-column="136" />
               <folding>
                 <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" />
@@ -114,23 +116,15 @@
       <file leaf-file-name="wrk_internal_qualification.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="535">
+              <caret line="141" column="171" selection-start-line="141" selection-start-column="171" selection-end-line="141" selection-end-column="171" />
               <folding>
-                <marker date="1524993706672" expanded="true" signature="512:1038" ph="SELECT inter... internalqualification" />
-                <marker date="1524993706672" expanded="true" signature="2044:2678" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:2748" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:2801" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:2854" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:2907" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:2977" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:3030" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:3136" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="2044:3312" ph="INSERT INTO internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="4259:4260" ph="UPDATE inter... " />
-                <marker date="1524993706672" expanded="true" signature="4259:4345" ph="UPDATE internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="4259:4407" ph="UPDATE internalqualification_employee... " />
-                <marker date="1524993706672" expanded="true" signature="4259:4644" ph="UPDATE inter... " />
+                <marker date="1531303162705" expanded="true" signature="520:1151" ph="SELECT inter... internalqualification" />
+                <marker date="1531303162705" expanded="true" signature="3727:4375" ph="INSERT INTO internalqualification_employee... " />
+                <marker date="1531303162705" expanded="true" signature="6812:6813" ph="UPDATE inter... " />
+                <marker date="1531303162705" expanded="true" signature="6812:6912" ph="UPDATE internalqualification_employee... " />
+                <marker date="1531303162705" expanded="true" signature="6812:6981" ph="UPDATE internalqualification_employee... " />
+                <marker date="1531303162705" expanded="true" signature="6812:7267" ph="UPDATE inter... " />
               </folding>
             </state>
           </provider>
@@ -182,10 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bd</find>
-      <find>connexion</find>
-      <find>last_id</find>
-      <find>update_employee</find>
       <find>add</find>
       <find>oldFormation-&gt;</find>
       <find>formation ava</find>
@@ -205,6 +195,17 @@
       <find>private</find>
       <find>auditexperience</find>
       <find>is_adm</find>
+      <find>internal_qualifications</find>
+      <find>internalqualifications</find>
+      <find>process</find>
+      <find>update_intern</find>
+      <find>intqual</find>
+      <find>add_default_internal_qualification</find>
+      <find>names</find>
+      <find>get_internal_qualification_capacity_list</find>
+      <find>get_internal_qualification_process_list</find>
+      <find>update_internal</find>
+      <find>update_internal_qualifications_process</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,10 +224,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/wrks/wrk_login.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_formation_type.php" />
+        <option value="$PROJECT_DIR$/wrks/wrk_employee.php" />
         <option value="$PROJECT_DIR$/wrks/wrk_internal_qualification.php" />
         <option value="$PROJECT_DIR$/wrks/wrk.php" />
         <option value="$PROJECT_DIR$/ctrl/ctrl.php" />
-        <option value="$PROJECT_DIR$/wrks/wrk_employee.php" />
       </list>
     </option>
   </component>
@@ -239,9 +240,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
-    <option name="width" value="1440" />
+    <option name="width" value="720" />
     <option name="height" value="878" />
   </component>
   <component name="ProjectView">
@@ -249,6 +250,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,6 +262,12 @@
               <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="hrm_edelcert_server" type="462c0819:PsiDirectoryNode" />
               <item name="attachements" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hrm_edelcert_server" type="462c0819:PsiDirectoryNode" />
+              <item name="attachements" type="462c0819:PsiDirectoryNode" />
+              <item name="internalqualification" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hrm_edelcert_server" type="b2602c69:ProjectViewProjectNode" />
@@ -280,7 +288,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,12 +405,14 @@
       <workItem from="1528275020176" duration="2225000" />
       <workItem from="1528308477284" duration="390000" />
       <workItem from="1528358179125" duration="406000" />
-      <workItem from="1528359095329" duration="98000" />
+      <workItem from="1528359095329" duration="298000" />
+      <workItem from="1531209485057" duration="45000" />
+      <workItem from="1531209725971" duration="6568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181338000" />
+    <option name="totallyTimeSpent" value="188151000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,19 +424,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1440" height="878" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110416666" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32834226" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32834226" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22083333" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -436,7 +445,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,20 +547,12 @@
         <state relative-caret-position="380">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <marker date="1524993706672" expanded="true" signature="512:1038" ph="SELECT inter... internalqualification" />
-            <marker date="1524993706672" expanded="true" signature="2044:2678" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2748" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2801" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2854" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2907" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2977" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3030" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3136" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3312" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4260" ph="UPDATE inter... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4345" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4407" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4644" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="520:1151" ph="SELECT inter... internalqualification" />
+            <marker date="1531303162705" expanded="true" signature="3727:4375" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6813" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6912" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6981" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:7267" ph="UPDATE inter... " />
           </folding>
         </state>
       </provider>
@@ -640,20 +640,12 @@
         <state relative-caret-position="380">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <marker date="1524993706672" expanded="true" signature="512:1038" ph="SELECT inter... internalqualification" />
-            <marker date="1524993706672" expanded="true" signature="2044:2678" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2748" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2801" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2854" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2907" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2977" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3030" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3136" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3312" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4260" ph="UPDATE inter... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4345" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4407" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4644" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="520:1151" ph="SELECT inter... internalqualification" />
+            <marker date="1531303162705" expanded="true" signature="3727:4375" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6813" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6912" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6981" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:7267" ph="UPDATE inter... " />
           </folding>
         </state>
       </provider>
@@ -734,20 +726,12 @@
         <state relative-caret-position="380">
           <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding>
-            <marker date="1524993706672" expanded="true" signature="512:1038" ph="SELECT inter... internalqualification" />
-            <marker date="1524993706672" expanded="true" signature="2044:2678" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2748" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2801" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2854" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2907" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2977" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3030" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3136" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3312" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4260" ph="UPDATE inter... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4345" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4407" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4644" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="520:1151" ph="SELECT inter... internalqualification" />
+            <marker date="1531303162705" expanded="true" signature="3727:4375" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6813" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6912" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6981" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:7267" ph="UPDATE inter... " />
           </folding>
         </state>
       </provider>
@@ -960,29 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <marker date="1524993706672" expanded="true" signature="512:1038" ph="SELECT inter... internalqualification" />
-            <marker date="1524993706672" expanded="true" signature="2044:2678" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2748" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2801" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2854" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2907" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:2977" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3030" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3136" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="2044:3312" ph="INSERT INTO internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4260" ph="UPDATE inter... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4345" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4407" ph="UPDATE internalqualification_employee... " />
-            <marker date="1524993706672" expanded="true" signature="4259:4644" ph="UPDATE inter... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wrks/wrk_formation_type.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -993,23 +954,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wrks/wrk_employee.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="247">
           <caret line="13" column="136" selection-start-line="13" selection-start-column="136" selection-end-line="13" selection-end-column="136" />
           <folding>
             <element signature="n#get_employee_administration#0;n#WrkEmployee#0;n#!!top" />
@@ -1045,6 +992,35 @@
             <element signature="n#generate_password#0;n#WrkEmployee#0;n#!!top" />
             <element signature="n#generate_mail_content#0;n#WrkEmployee#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrks/wrk_internal_qualification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="141" column="171" selection-start-line="141" selection-start-column="171" selection-end-line="141" selection-end-column="171" />
+          <folding>
+            <marker date="1531303162705" expanded="true" signature="520:1151" ph="SELECT inter... internalqualification" />
+            <marker date="1531303162705" expanded="true" signature="3727:4375" ph="INSERT INTO internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6813" ph="UPDATE inter... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6912" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:6981" ph="UPDATE internalqualification_employee... " />
+            <marker date="1531303162705" expanded="true" signature="6812:7267" ph="UPDATE inter... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrks/wrk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="165" column="91" selection-start-line="165" selection-start-column="91" selection-end-line="165" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctrl/ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
         </state>
       </provider>
     </entry>

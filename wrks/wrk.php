@@ -83,7 +83,8 @@ class Wrk
     public function add_employee($employee)
     {
         $pk_employee = $this->wrk_employee->add_employee($this->db_connection, $employee);
-        $this->wrk_internalqualification->add_default_internal_qualification($this->db_connection, $pk_employee);
+        $this->wrk_internalqualification->add_default_internal_qualification_process($this->db_connection, $pk_employee);
+        $this->wrk_internalqualification->add_default_internal_qualification_capacity($this->db_connection, $pk_employee);
         return $pk_employee;
     }
 
@@ -97,9 +98,14 @@ class Wrk
         return $this->wrk_nmsstandard->get_nmsstandard_list($this->db_connection);
     }
 
-    public function get_internal_qualification_list($employee)
+    public function get_internal_qualification_process_list($employee)
     {
-        return $this->wrk_internalqualification->get_internal_qualification_list($this->db_connection, $employee);
+        return $this->wrk_internalqualification->get_internal_qualification_process_list($this->db_connection, $employee);
+    }
+
+    public function get_internal_qualification_capacity_list($employee)
+    {
+        return $this->wrk_internalqualification->get_internal_qualification_capacity_list($this->db_connection, $employee);
     }
 
     public function delete_employee($pk_employee)
@@ -152,9 +158,14 @@ class Wrk
         return $this->wrk_employee->empty_employee_auditExperiences($this->db_connection, $pk_employee);
     }
 
-    public function update_internal_qualifications($internalQualifications)
+    public function update_internal_qualifications_process($internalQualificationsProcess)
     {
-        return $this->wrk_internalqualification->update_internal_qualifications($this->db_connection, $internalQualifications);
+        return $this->wrk_internalqualification->update_internal_qualifications_process($this->db_connection, $internalQualificationsProcess);
+    }
+
+    public function update_internal_qualifications_capacity($internalQualificationsCapacity)
+    {
+        return $this->wrk_internalqualification->update_internal_qualifications_capacity($this->db_connection, $internalQualificationsCapacity);
     }
 
     public function update_employee_auditObservations($employee_auditObservations)
@@ -211,6 +222,7 @@ class Wrk
     {
         return $this->wrk_employee->get_type_list($this->db_connection);
     }
+
 }
 
 

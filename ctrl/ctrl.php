@@ -31,8 +31,10 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_formation_types_list();
 } else if (isset($_GET["nmsstandards"])) {
     echo $ctrl->get_nmsstandard_list();
-} else if (isset($_GET["employee_internalqualifications"])) {
-    echo $ctrl->get_internal_qualification_list($_GET["employee_internalqualifications"]);
+} else if (isset($_GET["employee_internalqualificationsprocess"])) {
+    echo $ctrl->get_internal_qualification_process_list($_GET["employee_internalqualificationsprocess"]);
+} else if (isset($_GET["employee_internalqualificationscapacity"])) {
+    echo $ctrl->get_internal_qualification_capacity_list($_GET["employee_internalqualificationscapacity"]);
 } else if (isset($_GET["getUserID"])) {
     echo $ctrl->get_userId($_GET["getUserID"]);
 } else if (isset($_GET["employeeType"])) {
@@ -70,8 +72,10 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->update_employee_consultingExperiences($json);
     } else if ($json[0]->pk_auditExperience || $json[0]->pk_auditExperience == "0") {
         echo $ctrl->update_employee_auditExperiences($json);
-    } else if ($json[0]->pk_internalQualifications) {
-        echo $ctrl->update_internal_qualifications($json);
+    } else if ($json[0]->pk_internalQualificationsProcess) {
+        echo $ctrl->update_internal_qualifications_process($json);
+    } else if ($json[0]->pk_internalQualificationsCapacity) {
+        echo $ctrl->update_internal_qualifications_capacity($json);
     } else if ($json[0]->pk_auditObservation || $json[0]->pk_auditObservation == "0") {
         echo $ctrl->update_employee_auditObservations($json);
     } else if ($json[0]->pk_mandateSheet || $json[0]->pk_mandateSheet == "0") {
@@ -200,9 +204,14 @@ class Ctrl
         return $this->wrk->get_nmsstandard_list();
     }
 
-    public function get_internal_qualification_list($employee)
+    public function get_internal_qualification_process_list($employee)
     {
-        return $this->wrk->get_internal_qualification_list($employee);
+        return $this->wrk->get_internal_qualification_process_list($employee);
+    }
+
+    public function get_internal_qualification_capacity_list($employee)
+    {
+        return $this->wrk->get_internal_qualification_capacity_list($employee);
     }
 
     public function delete_employee($pk_employee)
@@ -255,9 +264,14 @@ class Ctrl
         return $this->wrk->empty_employee_auditExperiences($pk_employee);
     }
 
-    public function update_internal_qualifications($internalQualifications)
+    public function update_internal_qualifications_process($internalQualificationsProcess)
     {
-        return $this->wrk->update_internal_qualifications($internalQualifications);
+        return $this->wrk->update_internal_qualifications_process($internalQualificationsProcess);
+    }
+
+    public function update_internal_qualifications_capacity($internalQualificationsCapacity)
+    {
+        return $this->wrk->update_internal_qualifications_capacity($internalQualificationsCapacity);
     }
 
     public function update_employee_auditObservations($employee_auditObservations)
@@ -314,6 +328,7 @@ class Ctrl
     {
         return $this->wrk->get_type_list($this->db_connection);
     }
+
 }
 
 ?>
