@@ -52,6 +52,30 @@ class WrkInternalQualification
         return json_encode($emparray);
     }
 
+    public function get_internal_qualification_standard_list(DBConnection $db_connection, $employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if (!$this->connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT internalqualificationstandard.pk_internalQualificationsStandard, internalqualificationstandard.standard, internalqualificationstandard_employee.yesno, internalqualificationstandard_employee.fk_employee, internalqualificationstandard_employee.concernedScope, internalqualificationstandard_employee.attachement FROM internalqualificationstandard inner join internalqualificationstandard_employee on internalqualificationstandard.pk_internalQualificationsStandard = internalqualificationstandard_employee.fk_internalQualificationStandard where internalqualificationstandard_employee.fk_employee =" . $employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                if ($row["yesno"] == 0) {
+                    $row["yesno"] = false;
+                } else {
+                    $row["yesno"] = true;
+                }
+                $emparray[] = $row;
+            }
+        } else {
+        }
+        mysqli_close($this->connection);
+        return json_encode($emparray);
+    }
+
     public function add_default_internal_qualification_process(DBConnection $db_connection, $pk_employee)
     {
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
@@ -79,10 +103,32 @@ class WrkInternalQualification
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "INSERT INTO internalqualificationcapacity_employee (fk_internalQualificationcapacity, fk_employee, yesno, result, validationDate, attachement) VALUES ('1', '" . $pk_employee . "', '0', '', NULL, NULL), 
-                ('2', '" . $pk_employee . "', '0', '', NULL, NULL), ('3', '" . $pk_employee . "', '0', '', NULL, NULL), ('4', '" . $pk_employee . "', '0', '', NULL, NULL), ('5', '" . $pk_employee . "', '0', '', NULL, NULL), 
-                ('6', '" . $pk_employee . "', '0', '', NULL, NULL), ('7', '" . $pk_employee . "', '0', '', NULL, NULL), ('8', '" . $pk_employee . "', '0', '', NULL, NULL), ('9', '" . $pk_employee . "', '0', '', NULL, NULL),
-                ('10', '" . $pk_employee . "', '0', '', NULL, NULL), ('11', '" . $pk_employee . "', '0', '', NULL, NULL)";
+        $sql = "INSERT INTO `internalqualificationcapacity_employee` (`fk_internalQualificationCapacity`, `fk_employee`, `yesno`, `result`, `validationDate`, `attachement`) VALUES 
+                ('1', '" . $pk_employee . "', '0', '', NULL, NULL),('2', '" . $pk_employee . "', '0', '', NULL, NULL),('3', '" . $pk_employee . "', '0', '', NULL, NULL),
+                ('4', '" . $pk_employee . "', '0', '', NULL, NULL),('5', '" . $pk_employee . "', '0', '', NULL, NULL),('6', '" . $pk_employee . "', '0', '', NULL, NULL),
+                ('7', '" . $pk_employee . "', '0', '', NULL, NULL),('8', '" . $pk_employee . "', '0', '', NULL, NULL),('9', '" . $pk_employee . "', '0', '', NULL, NULL),
+                ('10', '" . $pk_employee . "', '0', '', NULL, NULL),('11', '" . $pk_employee . "', '0', '', NULL, NULL)";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function add_default_internal_qualification_standard(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if (!$this->connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "INSERT INTO `internalqualificationstandard_employee` (`fk_internalQualificationStandard`, `fk_employee`, `yesno`, `concernedScope`, `attachement`) VALUES 
+                ('1', '" . $pk_employee . "', '0', NULL, NULL),('2', '" . $pk_employee . "', '0', NULL, NULL),('3', '" . $pk_employee . "', '0', NULL, NULL),('4', '" . $pk_employee . "', '0', NULL, NULL),
+                ('5', '" . $pk_employee . "', '0', NULL, NULL),('6', '" . $pk_employee . "', '0', NULL, NULL),('7', '" . $pk_employee . "', '0', NULL, NULL),('8', '" . $pk_employee . "', '0', NULL, NULL),
+                ('9', '" . $pk_employee . "', '0', NULL, NULL),('10', '" . $pk_employee . "', '0', NULL, NULL),('11', '" . $pk_employee . "', '0', NULL, NULL),('12', '" . $pk_employee . "', '0', NULL, NULL)";
         if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
@@ -140,6 +186,33 @@ class WrkInternalQualification
                 $message .= "Internal qualification_employee with pk $updatedIntQualCapacity->pk_internalQualificationsCapacity updated \n";
             } else {
                 $message .= "Error while updating internal qualification_employee with fk internal qualification $updatedIntQualCapacity->pk_internalQualificationsCapacity and fk employee $updatedIntQualCapacity->fk_employee \n";
+            }
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function update_internal_qualifications_standard(DBConnection $db_connection, $internalQualificationsStandard)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
+        foreach ($internalQualificationsStandard as $updatedIntQualStandard) {
+            if ($updatedIntQualStandard->yesno == false) {
+                $updatedIntQualStandard->yesno = 0;
+            } else {
+                $updatedIntQualStandard->yesno = 1;
+            }
+            $sql = "UPDATE internalqualificationstandard_employee SET yesno = '$updatedIntQualStandard->yesno', concernedScope = '" . $updatedIntQualStandard->concernedScope . "', attachement = '$updatedIntQualStandard->attachement' WHERE internalqualificationstandard_employee.fk_internalQualificationStandard = $updatedIntQualStandard->pk_internalQualificationsStandard AND internalqualificationstandard_employee.fk_employee = $updatedIntQualStandard->fk_employee";
+            if ($this->connection->query($sql)) {
+                $message .= "Internal qualification_employee with pk $updatedIntQualStandard->pk_internalQualificationsStandard updated \n";
+            } else {
+                $message .= "Error while updating internal qualification_employee with fk internal qualification $updatedIntQualStandard->pk_internalQualificationsStandard and fk employee $updatedIntQualStandard->fk_employee \n";
             }
         }
 

@@ -22,7 +22,7 @@ class Wrk
         //dev
         $this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
         //prod
-        //$this->db_connection = new BDConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
+        //$this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
@@ -83,8 +83,9 @@ class Wrk
     public function add_employee($employee)
     {
         $pk_employee = $this->wrk_employee->add_employee($this->db_connection, $employee);
-        $this->wrk_internalqualification->add_default_internal_qualification_process($this->db_connection, $pk_employee);
-        $this->wrk_internalqualification->add_default_internal_qualification_capacity($this->db_connection, $pk_employee);
+        echo $this->wrk_internalqualification->add_default_internal_qualification_process($this->db_connection, $pk_employee);
+        echo $this->wrk_internalqualification->add_default_internal_qualification_capacity($this->db_connection, $pk_employee);
+        echo $this->wrk_internalqualification->add_default_internal_qualification_standard($this->db_connection, $pk_employee);
         return $pk_employee;
     }
 
@@ -106,6 +107,11 @@ class Wrk
     public function get_internal_qualification_capacity_list($employee)
     {
         return $this->wrk_internalqualification->get_internal_qualification_capacity_list($this->db_connection, $employee);
+    }
+
+    public function get_internal_qualification_standard_list($employee)
+    {
+        return $this->wrk_internalqualification->get_internal_qualification_standard_list($this->db_connection, $employee);
     }
 
     public function delete_employee($pk_employee)
@@ -166,6 +172,11 @@ class Wrk
     public function update_internal_qualifications_capacity($internalQualificationsCapacity)
     {
         return $this->wrk_internalqualification->update_internal_qualifications_capacity($this->db_connection, $internalQualificationsCapacity);
+    }
+
+    public function update_internal_qualifications_standard($internalQualificationsStandard)
+    {
+        return $this->wrk_internalqualification->update_internal_qualifications_standard($this->db_connection, $internalQualificationsStandard);
     }
 
     public function update_employee_auditObservations($employee_auditObservations)
