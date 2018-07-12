@@ -59,7 +59,7 @@ class WrkInternalQualification
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT internalqualificationstandard.pk_internalQualificationsStandard, internalqualificationstandard.standard, internalqualificationstandard_employee.yesno, internalqualificationstandard_employee.fk_employee, internalqualificationstandard_employee.concernedScope, internalqualificationstandard_employee.attachement FROM internalqualificationstandard inner join internalqualificationstandard_employee on internalqualificationstandard.pk_internalQualificationsStandard = internalqualificationstandard_employee.fk_internalQualificationStandard where internalqualificationstandard_employee.fk_employee =" . $employee;
+        $sql = "SELECT internalqualificationstandard.pk_internalQualificationsStandard, internalqualificationstandard.standard, internalqualificationstandard_employee.yesno, internalqualificationstandard_employee.fk_employee, internalqualificationstandard_employee.concernedScope1, internalqualificationstandard_employee.concernedScope2, internalqualificationstandard_employee.attachement FROM internalqualificationstandard inner join internalqualificationstandard_employee on internalqualificationstandard.pk_internalQualificationsStandard = internalqualificationstandard_employee.fk_internalQualificationStandard where internalqualificationstandard_employee.fk_employee =" . $employee;
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -125,10 +125,10 @@ class WrkInternalQualification
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "INSERT INTO `internalqualificationstandard_employee` (`fk_internalQualificationStandard`, `fk_employee`, `yesno`, `concernedScope`, `attachement`) VALUES 
-                ('1', '" . $pk_employee . "', '0', NULL, NULL),('2', '" . $pk_employee . "', '0', NULL, NULL),('3', '" . $pk_employee . "', '0', NULL, NULL),('4', '" . $pk_employee . "', '0', NULL, NULL),
-                ('5', '" . $pk_employee . "', '0', NULL, NULL),('6', '" . $pk_employee . "', '0', NULL, NULL),('7', '" . $pk_employee . "', '0', NULL, NULL),('8', '" . $pk_employee . "', '0', NULL, NULL),
-                ('9', '" . $pk_employee . "', '0', NULL, NULL),('10', '" . $pk_employee . "', '0', NULL, NULL),('11', '" . $pk_employee . "', '0', NULL, NULL),('12', '" . $pk_employee . "', '0', NULL, NULL)";
+        $sql = "INSERT INTO internalqualificationstandard_employee (fk_internalQualificationStandard, fk_employee, yesno, attachement, concernedScope1, concernedScope2) VALUES 
+                ('1', '" . $pk_employee . "', '0', NULL, NULL, NULL),('2', '" . $pk_employee . "', '0', NULL, NULL, NULL),('3', '" . $pk_employee . "', '0', NULL, NULL, NULL),('4', '" . $pk_employee . "', '0', NULL, NULL, NULL),
+                ('5', '" . $pk_employee . "', '0', NULL, NULL, NULL),('6', '" . $pk_employee . "', '0', NULL, NULL, NULL),('7', '" . $pk_employee . "', '0', NULL, NULL, NULL),('8', '" . $pk_employee . "', '0', NULL, NULL, NULL),
+                ('9', '" . $pk_employee . "', '0', NULL, NULL, NULL),('10', '" . $pk_employee . "', '0', NULL, NULL, NULL),('11', '" . $pk_employee . "', '0', NULL, NULL, NULL),('12', '" . $pk_employee . "', '0', NULL, NULL, NULL)";
         if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
@@ -208,7 +208,15 @@ class WrkInternalQualification
             } else {
                 $updatedIntQualStandard->yesno = 1;
             }
-            $sql = "UPDATE internalqualificationstandard_employee SET yesno = '$updatedIntQualStandard->yesno', concernedScope = '" . $updatedIntQualStandard->concernedScope . "', attachement = '$updatedIntQualStandard->attachement' WHERE internalqualificationstandard_employee.fk_internalQualificationStandard = $updatedIntQualStandard->pk_internalQualificationsStandard AND internalqualificationstandard_employee.fk_employee = $updatedIntQualStandard->fk_employee";
+            if (($updatedIntQualStandard->concernedScope1 < 1 || $updatedIntQualStandard->concernedScope1 > 39) && ($updatedIntQualStandard->concernedScope2 < 1 || $updatedIntQualStandard->concernedScope2 > 39)) {
+                $sql = "UPDATE internalqualificationstandard_employee SET yesno = '$updatedIntQualStandard->yesno', concernedScope1 = NULL, concernedScope2 = NULL, attachement = '$updatedIntQualStandard->attachement' WHERE internalqualificationstandard_employee.fk_internalQualificationStandard = $updatedIntQualStandard->pk_internalQualificationsStandard AND internalqualificationstandard_employee.fk_employee = $updatedIntQualStandard->fk_employee";
+            } else if (($updatedIntQualStandard->concernedScope1 < 1 || $updatedIntQualStandard->concernedScope1 > 39) && !($updatedIntQualStandard->concernedScope2 < 1 || $updatedIntQualStandard->concernedScope2 > 39)) {
+                $sql = "UPDATE internalqualificationstandard_employee SET yesno = '$updatedIntQualStandard->yesno', concernedScope1 = NULL, concernedScope2 = '" . $updatedIntQualStandard->concernedScope2 . "', attachement = '$updatedIntQualStandard->attachement' WHERE internalqualificationstandard_employee.fk_internalQualificationStandard = $updatedIntQualStandard->pk_internalQualificationsStandard AND internalqualificationstandard_employee.fk_employee = $updatedIntQualStandard->fk_employee";
+            } else if (!($updatedIntQualStandard->concernedScope1 < 1 || $updatedIntQualStandard->concernedScope1 > 39) && ($updatedIntQualStandard->concernedScope2 < 1 || $updatedIntQualStandard->concernedScope2 > 39)) {
+                $sql = "UPDATE internalqualificationstandard_employee SET yesno = '$updatedIntQualStandard->yesno', concernedScope1 = '" . $updatedIntQualStandard->concernedScope1 . "', concernedScope2 = NULL, attachement = '$updatedIntQualStandard->attachement' WHERE internalqualificationstandard_employee.fk_internalQualificationStandard = $updatedIntQualStandard->pk_internalQualificationsStandard AND internalqualificationstandard_employee.fk_employee = $updatedIntQualStandard->fk_employee";
+            } else {
+                $sql = "UPDATE internalqualificationstandard_employee SET yesno = '$updatedIntQualStandard->yesno', concernedScope1 = '" . $updatedIntQualStandard->concernedScope1 . "', concernedScope2 = '" . $updatedIntQualStandard->concernedScope2 . "', attachement = '$updatedIntQualStandard->attachement' WHERE internalqualificationstandard_employee.fk_internalQualificationStandard = $updatedIntQualStandard->pk_internalQualificationsStandard AND internalqualificationstandard_employee.fk_employee = $updatedIntQualStandard->fk_employee";
+            }
             if ($this->connection->query($sql)) {
                 $message .= "Internal qualification_employee with pk $updatedIntQualStandard->pk_internalQualificationsStandard updated \n";
             } else {
