@@ -20,9 +20,9 @@ class Wrk
     public function __construct()
     {
         //dev
-        $this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
+        //$this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
         //prod
-        //$this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
+        $this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
@@ -234,6 +234,35 @@ class Wrk
         return $this->wrk_employee->get_type_list($this->db_connection);
     }
 
+    public function get_internal_qualifications_process_name()
+    {
+        return $this->wrk_internalqualification->get_internal_qualifications_process_name($this->db_connection);
+    }
+
+    public function get_internal_qualifications_capacity_name()
+    {
+        return $this->wrk_internalqualification->get_internal_qualifications_capacity_name($this->db_connection);
+    }
+
+    public function get_internal_qualifications_standard_name()
+    {
+        return $this->wrk_internalqualification->get_internal_qualifications_standard_name($this->db_connection);
+    }
+
+    public function update_internal_qualifications_process_name($internal_qualifications_process_name)
+    {
+        return $this->wrk_internalqualification->update_internal_qualifications_process_name($this->db_connection, $internal_qualifications_process_name);
+    }
+
+    public function update_internal_qualifications_capacity_name($internal_qualifications_capacity_name)
+    {
+        return $this->wrk_internalqualification->update_internal_qualifications_capacity_name($this->db_connection, $internal_qualifications_capacity_name);
+    }
+
+    public function update_internal_qualifications_standard_name($internal_qualifications_standard_name)
+    {
+        return $this->wrk_internalqualification->update_internal_qualifications_standard_name($this->db_connection, $internal_qualifications_standard_name);
+    }
 }
 
 

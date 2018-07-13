@@ -199,11 +199,6 @@ class WrkEmployee
         //$username = checkUsername($employee->firstName . $employee->lastName);
         $username = $employee->firstName . $employee->lastName;
         $password = $this->generate_password();
-        $isAdmin = 0;
-        //if ($employee->role == "admin") {
-        //    $isAdmin = 1;
-        //}
-
         $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, fk_employeetype, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord)
             VALUES (NULL, '" . addslashes($employee->lastName) . "', '" . addslashes($employee->firstName) . "', '" . addslashes($username) . "', '" . md5($password) . "', '" . $employee->fk_employeetype . "', '" . $employee->birthDate . "', '" . addslashes($employee->address) . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle

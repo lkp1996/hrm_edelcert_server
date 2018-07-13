@@ -43,6 +43,12 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->get_employee_type($_GET["employeeType"]);
 } else if (isset($_GET["type_list"])) {
     echo $ctrl->get_type_list();
+} else if (isset($_GET["internalqualificationsprocess_name"])) {
+    echo $ctrl->get_internal_qualifications_process_name();
+} else if (isset($_GET["internalqualificationscapacity_name"])) {
+    echo $ctrl->get_internal_qualifications_capacity_name();
+} else if (isset($_GET["internalqualificationsstandard_name"])) {
+    echo $ctrl->get_internal_qualifications_standard_name();
 } else if ($json = json_decode(file_get_contents('php://input'))) {
     if ($json->username && $json->password) {
         echo $ctrl->login($json);
@@ -74,11 +80,11 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->update_employee_consultingExperiences($json);
     } else if ($json[0]->pk_auditExperience || $json[0]->pk_auditExperience == "0") {
         echo $ctrl->update_employee_auditExperiences($json);
-    } else if ($json[0]->pk_internalQualificationsProcess) {
+    } else if ($json[0]->pk_internalQualificationsProcess && $json[0]->fk_employee) {
         echo $ctrl->update_internal_qualifications_process($json);
-    } else if ($json[0]->pk_internalQualificationsCapacity) {
+    } else if ($json[0]->pk_internalQualificationsCapacity && $json[0]->fk_employee) {
         echo $ctrl->update_internal_qualifications_capacity($json);
-    } else if ($json[0]->pk_internalQualificationsStandard) {
+    } else if ($json[0]->pk_internalQualificationsStandard && $json[0]->fk_employee) {
         echo $ctrl->update_internal_qualifications_standard($json);
     } else if ($json[0]->pk_auditObservation || $json[0]->pk_auditObservation == "0") {
         echo $ctrl->update_employee_auditObservations($json);
@@ -86,6 +92,12 @@ if (isset($_GET["employees_list"])) {
         echo $ctrl->update_employee_mandateSheets($json);
     } else if ($json[0]->pk_objective || $json[0]->pk_objective == "0") {
         echo $ctrl->update_employee_objectives($json);
+    } else if (($json[0]->pk_internalQualificationsProcess || $json[0]->pk_internalQualificationsProcess == "0") && !($json[0]->fk_employee)) {
+        echo $ctrl->update_internal_qualifications_process_name($json);
+    } else if (($json[0]->pk_internalQualificationsCapacity || $json[0]->pk_internalQualificationsCapacity == "0") && !($json[0]->fk_employee)) {
+        echo $ctrl->update_internal_qualifications_capacity_name($json);
+    } else if (($json[0]->pk_internalQualificationsStandard || $json[0]->pk_internalQualificationsStandard == "0") && !($json[0]->fk_employee)) {
+        echo $ctrl->update_internal_qualifications_standard_name($json);
     } else {
         echo "nothing yet";
     }
@@ -340,9 +352,38 @@ class Ctrl
 
     public function get_type_list()
     {
-        return $this->wrk->get_type_list($this->db_connection);
+        return $this->wrk->get_type_list();
     }
 
+    public function get_internal_qualifications_process_name()
+    {
+        return $this->wrk->get_internal_qualifications_process_name();
+    }
+
+    public function get_internal_qualifications_capacity_name()
+    {
+        return $this->wrk->get_internal_qualifications_capacity_name();
+    }
+
+    public function get_internal_qualifications_standard_name()
+    {
+        return $this->wrk->get_internal_qualifications_standard_name();
+    }
+
+    public function update_internal_qualifications_process_name($internal_qualifications_process_name)
+    {
+        return $this->wrk->update_internal_qualifications_process_name($internal_qualifications_process_name);
+    }
+
+    public function update_internal_qualifications_capacity_name($internal_qualifications_capacity_name)
+    {
+        return $this->wrk->update_internal_qualifications_capacity_name($internal_qualifications_capacity_name);
+    }
+
+    public function update_internal_qualifications_standard_name($internal_qualifications_standard_name)
+    {
+        return $this->wrk->update_internal_qualifications_standard_name($internal_qualifications_standard_name);
+    }
 }
 
 ?>
