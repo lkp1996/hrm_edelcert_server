@@ -143,6 +143,26 @@ if (isset($_GET["employees_list"])) {
     file_put_contents($target_file, file_get_contents($_FILES['mandatesheets']['tmp_name']));
 } else if (isset($_GET["deleteId"])) {
     echo $ctrl->delete_employee($_GET["deleteId"]);
+} else if (isset($_GET["deleteIdCV"])) {
+    echo $ctrl->delete_cv($_GET["deleteIdCV"]);
+} else if (isset($_GET["deleteIdCriminalRecord"])) {
+    echo $ctrl->delete_criminal_record($_GET["deleteIdCriminalRecord"]);
+} else if (isset($_GET["deleteIdPicture"])) {
+    echo $ctrl->delete_picture($_GET["deleteIdPicture"]);
+} else if (isset($_GET["deleteIdFormationAttachement"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_formation_attachement($_GET["deleteIdFormationAttachement"], $_GET["employeeId"]);
+} else if (isset($_GET["deleteIdProfessionnalExperienceAttachement"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_professionnal_exp_attachement($_GET["deleteIdProfessionnalExperienceAttachement"], $_GET["employeeId"]);
+} else if (isset($_GET["deleteIdMandateSheetsAttachements"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_mandate_sheet_attachement($_GET["deleteIdMandateSheetsAttachements"], $_GET["employeeId"]);
+} else if (isset($_GET["deleteIdQualificationsCapacityAttachements"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_intqual_capacity_attachement($_GET["deleteIdQualificationsCapacityAttachements"], $_GET["employeeId"]);
+} else if (isset($_GET["deleteIdQualificationsProcessAttachements"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_intqual_process_attachement($_GET["deleteIdQualificationsProcessAttachements"], $_GET["employeeId"]);
+} else if (isset($_GET["deleteIdInternalQualificationsStandardAttachements"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_intqual_standard_attachement($_GET["deleteIdInternalQualificationsStandardAttachements"], $_GET["employeeId"]);
+} else if (isset($_GET["deleteIdAuditObservationsAttachements"]) && isset($_GET["employeeId"])) {
+    echo $ctrl->delete_auditobs_attachement($_GET["deleteIdAuditObservationsAttachements"], $_GET["employeeId"]);
 }
 
 
@@ -383,6 +403,56 @@ class Ctrl
     public function update_internal_qualifications_standard_name($internal_qualifications_standard_name)
     {
         return $this->wrk->update_internal_qualifications_standard_name($internal_qualifications_standard_name);
+    }
+
+    public function delete_cv($pk_employee)
+    {
+        return $this->wrk->delete_cv($pk_employee);
+    }
+
+    public function delete_criminal_record($pk_employee)
+    {
+        return $this->wrk->delete_criminal_record($pk_employee);
+    }
+
+    public function delete_picture($pk_employee)
+    {
+        return $this->wrk->delete_picture($pk_employee);
+    }
+
+    public function delete_formation_attachement($pk_formation, $pk_employee)
+    {
+        return $this->wrk->delete_formation_attachement($pk_formation, $pk_employee);
+    }
+
+    public function delete_professionnal_exp_attachement($pk_professionnal_exp, $pk_employee)
+    {
+        return $this->wrk->delete_professionnal_exp_attachement($pk_professionnal_exp, $pk_employee);
+    }
+
+    public function delete_mandate_sheet_attachement($pk_mandate_sheet, $pk_employee)
+    {
+        return $this->wrk->delete_mandate_sheet_attachement($pk_mandate_sheet, $pk_employee);
+    }
+
+    public function delete_intqual_capacity_attachement($fk_intqual_capacity, $pk_employee)
+    {
+        return $this->wrk->delete_intqual_capacity_attachement($fk_intqual_capacity, $pk_employee);
+    }
+
+    public function delete_intqual_process_attachement($fk_intqual_process, $pk_employee)
+    {
+        return $this->wrk->delete_intqual_process_attachement($fk_intqual_process, $pk_employee);
+    }
+
+    public function delete_intqual_standard_attachement($fk_intqual_standard, $pk_employee)
+    {
+        return $this->wrk->delete_intqual_standard_attachement($fk_intqual_standard, $pk_employee);
+    }
+
+    public function delete_auditobs_attachement($pk_auditobs, $pk_employee)
+    {
+        return $this->wrk->delete_auditobs_attachement($pk_auditobs, $pk_employee);
     }
 }
 

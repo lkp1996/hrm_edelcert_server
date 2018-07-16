@@ -20,9 +20,9 @@ class Wrk
     public function __construct()
     {
         //dev
-        //$this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
+        $this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
         //prod
-        $this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
+        //$this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
@@ -262,6 +262,56 @@ class Wrk
     public function update_internal_qualifications_standard_name($internal_qualifications_standard_name)
     {
         return $this->wrk_internalqualification->update_internal_qualifications_standard_name($this->db_connection, $internal_qualifications_standard_name);
+    }
+
+    public function delete_cv($pk_employee)
+    {
+        return $this->wrk_employee->delete_cv($this->db_connection, $pk_employee);
+    }
+
+    public function delete_criminal_record($pk_employee)
+    {
+        return $this->wrk_employee->delete_criminal_record($this->db_connection, $pk_employee);
+    }
+
+    public function delete_picture($pk_employee)
+    {
+        return $this->wrk_employee->delete_picture($this->db_connection, $pk_employee);
+    }
+
+    public function delete_formation_attachement($pk_formation, $pk_employee)
+    {
+        return $this->wrk_employee->delete_formation_attachement($this->db_connection, $pk_formation, $pk_employee);
+    }
+
+    public function delete_professionnal_exp_attachement($pk_professionnal_exp, $pk_employee)
+    {
+        return $this->wrk_employee->delete_professionnal_exp_attachement($this->db_connection, $pk_professionnal_exp, $pk_employee);
+    }
+
+    public function delete_mandate_sheet_attachement($pk_mandate_sheet, $pk_employee)
+    {
+        return $this->wrk_employee->delete_mandate_sheet_attachement($this->db_connection, $pk_mandate_sheet, $pk_employee);
+    }
+
+    public function delete_intqual_capacity_attachement($fk_intqual_capacity, $pk_employee)
+    {
+        return $this->wrk_employee->delete_intqual_capacity_attachement($this->db_connection, $fk_intqual_capacity, $pk_employee);
+    }
+
+    public function delete_intqual_process_attachement($fk_intqual_process, $pk_employee)
+    {
+        return $this->wrk_employee->delete_intqual_process_attachement($this->db_connection, $fk_intqual_process, $pk_employee);
+    }
+
+    public function delete_intqual_standard_attachement($fk_intqual_standard, $pk_employee)
+    {
+        return $this->wrk_employee->delete_intqual_standard_attachement($this->db_connection, $fk_intqual_standard, $pk_employee);
+    }
+
+    public function delete_auditobs_attachement($pk_auditobs, $pk_employee)
+    {
+        return $this->wrk_employee->delete_auditobs_attachement($this->db_connection, $pk_auditobs, $pk_employee);
     }
 }
 

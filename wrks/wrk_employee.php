@@ -913,6 +913,317 @@ class WrkEmployee
         return json_encode($emparray);
     }
 
+    public function delete_cv(DBConnection $db_connection, $pk_employee)
+    {
+        $message = "";
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/cv/$pk_employee/";
+
+        $sql = "SELECT cv FROM employee WHERE pk_employee = " . $pk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No employee cv available";
+        }
+        unlink($target_dir . $emparray["cv"]);
+
+        $sql = "UPDATE employee SET cv = NULL WHERE employee.pk_employee = $pk_employee";
+        if ($this->connection->query($sql)) {
+            $message .= "CV file " . $emparray["cv"] . " deleted from database";
+        } else {
+            $message .= $message .= "Error while deleting cv file " . $emparray["cv"] . " from database";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_criminal_record(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/criminalrecord/$pk_employee/";
+
+        $sql = "SELECT criminalRecord FROM employee WHERE pk_employee = " . $pk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No employee criminal record available";
+        }
+        unlink($target_dir . $emparray["criminalRecord"]);
+
+        $sql = "UPDATE employee SET criminalRecord = NULL WHERE employee.pk_employee = $pk_employee";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_picture(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/picture/$pk_employee/";
+
+        $sql = "SELECT picture FROM employee WHERE pk_employee = " . $pk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No employee picture available";
+        }
+        unlink($target_dir . $emparray["picture"]);
+
+        $sql = "UPDATE employee SET picture = NULL WHERE employee.pk_employee = $pk_employee";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_formation_attachement(DBConnection $db_connection, $pk_formation, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/formation/$pk_employee/";
+
+        $sql = "SELECT attachement FROM formation WHERE fk_employee = " . $pk_employee . " AND pk_formation = " . $pk_formation;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No formation attachement available";
+        }
+        unlink($target_dir . $emparray["attachement"]);
+
+        $sql = "UPDATE formation SET attachement = NULL WHERE formation.fk_employee = $pk_employee AND formation.pk_formation = $pk_formation";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_professionnal_exp_attachement(DBConnection $db_connection, $pk_professionnal_exp, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/professionnalexperience/$pk_employee/";
+
+        $sql = "SELECT attachement FROM professionnalexperience WHERE fk_employee = " . $pk_employee . " AND pk_professionnalExperience = " . $pk_professionnal_exp;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No professionnal experience attachement available";
+        }
+        unlink($target_dir . $emparray["attachement"]);
+
+        $sql = "UPDATE professionnalexperience SET attachement = NULL WHERE professionnalexperience.fk_employee = $pk_employee AND professionnalexperience.pk_professionnalExperience = $pk_professionnal_exp";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_mandate_sheet_attachement(DBConnection $db_connection, $pk_mandate_sheet, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/mandatesheet/$pk_employee/";
+
+        $sql = "SELECT mandatesheet FROM auditexperience WHERE fk_employee = " . $pk_employee . " AND pk_auditExperience = " . $pk_mandate_sheet;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No mandate sheet attachement available";
+        }
+        unlink($target_dir . $emparray["mandatesheet"]);
+
+        $sql = "UPDATE auditexperience SET mandatesheet = NULL WHERE auditexperience.fk_employee = $pk_employee AND auditexperience.pk_auditExperience = $pk_mandate_sheet";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_intqual_capacity_attachement(DBConnection $db_connection, $fk_intqual_capacity, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/internalqualification/$pk_employee/";
+
+        $sql = "SELECT attachement FROM internalqualificationcapacity_employee WHERE fk_employee = " . $pk_employee . " AND fk_internalQualificationCapacity = " . $fk_intqual_capacity;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No internal qualification capacity attachement available";
+        }
+        unlink($target_dir . $emparray["attachement"]);
+
+        $sql = "UPDATE internalqualificationcapacity_employee SET attachement = NULL WHERE internalqualificationcapacity_employee.fk_employee = $pk_employee AND internalqualificationcapacity_employee.fk_internalQualificationCapacity = $fk_intqual_capacity";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_intqual_process_attachement(DBConnection $db_connection, $fk_intqual_process, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/internalqualification/$pk_employee/";
+
+        $sql = "SELECT attachement FROM internalqualificationprocess_employee WHERE fk_employee = " . $pk_employee . " AND fk_internalQualificationProcess = " . $fk_intqual_process;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No internal qualification process attachement available";
+        }
+        unlink($target_dir . $emparray["attachement"]);
+
+        $sql = "UPDATE internalqualificationprocess_employee SET attachement = NULL WHERE internalqualificationprocess_employee.fk_employee = $pk_employee AND internalqualificationprocess_employee.fk_internalQualificationProcess = $fk_intqual_process";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_intqual_standard_attachement(DBConnection $db_connection, $fk_intqual_standard, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/internalqualification/$pk_employee/";
+
+        $sql = "SELECT attachement FROM internalqualificationstandard_employee WHERE fk_employee = " . $pk_employee . " AND fk_internalQualificationStandard = " . $fk_intqual_standard;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No internal qualification standard attachement available";
+        }
+        unlink($target_dir . $emparray["attachement"]);
+
+        $sql = "UPDATE internalqualificationstandard_employee SET attachement = NULL WHERE internalqualificationstandard_employee.fk_employee = $pk_employee AND internalqualificationstandard_employee.fk_internalQualificationStandard = $fk_intqual_standard";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
+    public function delete_auditobs_attachement(DBConnection $db_connection, $pk_auditobs, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/auditobservation/$pk_employee/";
+
+        $sql = "SELECT attachement FROM auditobservation WHERE fk_employee = " . $pk_employee . " AND pk_auditObservation = " . $pk_auditobs;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No audit observation attachement available";
+        }
+        unlink($target_dir . $emparray["attachement"]);
+
+        $sql = "UPDATE auditobservation SET attachement = NULL WHERE auditobservation.fk_employee = $pk_employee AND auditobservation.pk_auditObservation = $pk_auditobs";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
     public function create_dirs($pk_employee)
     {
         mkdir("../attachements/auditobservation/$pk_employee");
