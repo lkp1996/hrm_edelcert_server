@@ -20,9 +20,9 @@ class Wrk
     public function __construct()
     {
         //dev
-        $this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
+        //$this->db_connection = new DBConnection("hrm_edelcert", "root", "root", "localhost");
         //prod
-        //$this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
+        $this->db_connection = new DBConnection("incertit_hrm", "incertit_hrm", "root", "localhost");
         $this->wrk_employee = new WrkEmployee();
         $this->wrk_formationtype = new WrkFormationType();
         $this->wrk_nmsstandard = new WrkNMSStandard();
@@ -272,6 +272,11 @@ class Wrk
     public function delete_criminal_record($pk_employee)
     {
         return $this->wrk_employee->delete_criminal_record($this->db_connection, $pk_employee);
+    }
+
+    public function delete_contract($pk_employee)
+    {
+        return $this->wrk_employee->delete_contract($this->db_connection, $pk_employee);
     }
 
     public function delete_picture($pk_employee)

@@ -116,6 +116,11 @@ if (isset($_GET["employees_list"])) {
     $target_dir = "../attachements/criminalrecord/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["criminalRecord"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['criminalRecord']['tmp_name']));
+} else if (isset($_FILES["contract"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/contract/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["contract"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['contract']['tmp_name']));
 } else if (isset($_FILES["formation"])) {
     $pk_employee = $_POST['id'];
     $target_dir = "../attachements/formation/$pk_employee/";
@@ -147,6 +152,8 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->delete_cv($_GET["deleteIdCV"]);
 } else if (isset($_GET["deleteIdCriminalRecord"])) {
     echo $ctrl->delete_criminal_record($_GET["deleteIdCriminalRecord"]);
+} else if (isset($_GET["deleteIdContract"])) {
+    echo $ctrl->delete_contract($_GET["deleteIdContract"]);
 } else if (isset($_GET["deleteIdPicture"])) {
     echo $ctrl->delete_picture($_GET["deleteIdPicture"]);
 } else if (isset($_GET["deleteIdFormationAttachement"]) && isset($_GET["employeeId"])) {
@@ -413,6 +420,11 @@ class Ctrl
     public function delete_criminal_record($pk_employee)
     {
         return $this->wrk->delete_criminal_record($pk_employee);
+    }
+
+    public function delete_contract($pk_employee)
+    {
+        return $this->wrk->delete_contract($pk_employee);
     }
 
     public function delete_picture($pk_employee)
