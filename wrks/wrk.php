@@ -279,6 +279,11 @@ class Wrk
         return $this->wrk_employee->delete_contract($this->db_connection, $pk_employee);
     }
 
+    public function delete_certificate_independence($pk_employee)
+    {
+        return $this->wrk_employee->delete_certificate_independence($this->db_connection, $pk_employee);
+    }
+
     public function delete_picture($pk_employee)
     {
         return $this->wrk_employee->delete_picture($this->db_connection, $pk_employee);

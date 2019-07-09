@@ -121,6 +121,11 @@ if (isset($_GET["employees_list"])) {
     $target_dir = "../attachements/contract/$pk_employee/";
     $target_file = $target_dir . basename($_FILES["contract"]["name"]);
     file_put_contents($target_file, file_get_contents($_FILES['contract']['tmp_name']));
+} else if (isset($_FILES["certificateIndependence"])) {
+    $pk_employee = $_POST['id'];
+    $target_dir = "../attachements/certificateIndependence/$pk_employee/";
+    $target_file = $target_dir . basename($_FILES["certificateIndependence"]["name"]);
+    file_put_contents($target_file, file_get_contents($_FILES['certificateIndependence']['tmp_name']));
 } else if (isset($_FILES["formation"])) {
     $pk_employee = $_POST['id'];
     $target_dir = "../attachements/formation/$pk_employee/";
@@ -154,6 +159,8 @@ if (isset($_GET["employees_list"])) {
     echo $ctrl->delete_criminal_record($_GET["deleteIdCriminalRecord"]);
 } else if (isset($_GET["deleteIdContract"])) {
     echo $ctrl->delete_contract($_GET["deleteIdContract"]);
+} else if (isset($_GET["deleteIdCertificateIndependence"])) {
+    echo $ctrl->delete_certificate_independence($_GET["deleteIdCertificateIndependence"]);
 } else if (isset($_GET["deleteIdPicture"])) {
     echo $ctrl->delete_picture($_GET["deleteIdPicture"]);
 } else if (isset($_GET["deleteIdFormationAttachement"]) && isset($_GET["employeeId"])) {
@@ -425,6 +432,11 @@ class Ctrl
     public function delete_contract($pk_employee)
     {
         return $this->wrk->delete_contract($pk_employee);
+    }
+
+    public function delete_certificate_independence($pk_employee)
+    {
+        return $this->wrk->delete_certificate_independence($pk_employee);
     }
 
     public function delete_picture($pk_employee)

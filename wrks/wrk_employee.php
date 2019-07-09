@@ -31,7 +31,7 @@ class WrkEmployee
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "SELECT pk_employee, lastName, firstName, birthDate, address,postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord, contract FROM employee WHERE pk_employee = " . $pk_employee;
+        $sql = "SELECT pk_employee, lastName, firstName, birthDate, address,postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord, contract, certificateIndependence FROM employee WHERE pk_employee = " . $pk_employee;
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -199,10 +199,10 @@ class WrkEmployee
         //$username = checkUsername($employee->firstName . $employee->lastName);
         $username = $employee->firstName . $employee->lastName;
         $password = $this->generate_password();
-        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, fk_employeetype, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord, contract)
+        $sql = "INSERT INTO employee (pk_employee, lastName, firstName, username, password, fk_employeetype, birthDate, address, postCode, location, avs, phone, email, picture, currentTitle, comingToOfficeDate, currentHourlyWage, cv, criminalRecord, contract, certificateIndependence)
             VALUES (NULL, '" . addslashes($employee->lastName) . "', '" . addslashes($employee->firstName) . "', '" . addslashes($username) . "', '" . md5($password) . "', '" . $employee->fk_employeetype . "', '" . $employee->birthDate . "', '" . addslashes($employee->address) . "', '" . $employee->postCode . "', '"
             . $employee->location . "', '" . $employee->avs . "', '" . $employee->phone . "', '" . $employee->email . "', '" . $employee->picture . "', '" . $employee->currentTitle
-            . "', '" . $employee->comingToOfficeDate . "', '" . addslashes($employee->currentHourlyWage) . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "', '" . $employee->contract . "')";
+            . "', '" . $employee->comingToOfficeDate . "', '" . addslashes($employee->currentHourlyWage) . "', '" . $employee->cv . "', '" . $employee->criminalRecord . "', '" . $employee->contract . "', '" . $employee->certificateIndependence ."')";
         if ($this->connection->query($sql)) {
             $last_id = $this->connection->insert_id;
         } else {
@@ -245,7 +245,7 @@ class WrkEmployee
         $sql = "UPDATE employee SET lastName = '" . addslashes($employee->lastName) . "', firstName = '" . addslashes($employee->firstName) . "', birthDate = '$employee->birthDate', 
                   address = '" . addslashes($employee->address) . "', postCode = '" . addslashes($employee->postCode) . "', location = '" . addslashes($employee->location) . "', avs = '$employee->avs', 
                   phone = '" . addslashes($employee->phone) . "', email = '$employee->email', currentTitle = '" . addslashes($employee->currentTitle) . "', comingToOfficeDate = '$employee->comingToOfficeDate', 
-                  currentHourlyWage = '" . addslashes($employee->currentHourlyWage) . "', picture = '$employee->picture',cv = '$employee->cv', criminalRecord = '$employee->criminalRecord', contract = '$employee->contract' WHERE employee.pk_employee = $employee->pk_employee";
+                  currentHourlyWage = '" . addslashes($employee->currentHourlyWage) . "', picture = '$employee->picture',cv = '$employee->cv', criminalRecord = '$employee->criminalRecord', contract = '$employee->contract', certificateIndependence = '$employee->certificateIndependence' WHERE employee.pk_employee = $employee->pk_employee";
         if ($this->connection->query($sql)) {
             $message = "OK";
         } else {
@@ -1007,6 +1007,37 @@ class WrkEmployee
         return $message;
     }
 
+    public function delete_certificate_independence(DBConnection $db_connection, $pk_employee)
+    {
+        $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
+        mysqli_set_charset($this->connection, "utf8");
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+        $target_dir = "../attachements/certificateIndependence/$pk_employee/";
+
+        $sql = "SELECT certificateIndependence FROM employee WHERE pk_employee = " . $pk_employee;
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $emparray = $row;
+            }
+        } else {
+            echo "No employee certificate of independence available";
+        }
+        unlink($target_dir . $emparray["certificateIndependence"]);
+
+        $sql = "UPDATE employee SET certificateIndependence = NULL WHERE employee.pk_employee = $pk_employee";
+        if ($this->connection->query($sql)) {
+            $message = "OK";
+        } else {
+            $message = "KO";
+        }
+
+        $this->connection->close();
+        return $message;
+    }
+
     public function delete_picture(DBConnection $db_connection, $pk_employee)
     {
         $this->connection = mysqli_connect($db_connection->get_server(), $db_connection->get_username(), $db_connection->get_password(), $db_connection->get_dbname());
@@ -1259,6 +1290,7 @@ class WrkEmployee
     {
         mkdir("../attachements/auditobservation/$pk_employee");
         mkdir("../attachements/contract/$pk_employee");
+        mkdir("../attachements/certificateIndependence/$pk_employee");
         mkdir("../attachements/criminalrecord/$pk_employee");
         mkdir("../attachements/cv/$pk_employee");
         mkdir("../attachements/formation/$pk_employee");
